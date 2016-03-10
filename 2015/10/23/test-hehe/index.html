@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
 					</div>
 				</section>
 				
@@ -205,16 +205,11 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <p>昨天再跟<a href="http://www.52cik.com/" target="_blank" rel="external">码神</a>请教问题时，他提起了hexo(<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">中文官网</a>)，从他那里老能接触到时代的最新事物，让我倍感兴奋与荣幸，于是开始了自己的hexo之旅。安装步骤这里不介绍了，官网和百度都有，这里只是介绍一下在win下提交到github的hexo deploy命令报错问题（<strong>event.js 141 throw er; // Unhandled ‘error event’</strong>）的解决方法。</p>
+        <p>昨天再跟<a href="http://www.52cik.com/" target="_blank" rel="external">码神</a>请教问题时，他提起了hexo(<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">中文官网</a>)，从他那里老能接触到时代的最新事物，让我倍感兴奋与荣幸，于是开始了自己的hexo之旅。安装步骤这里不介绍了，官网和百度都有，这里只是介绍一下在win下提交到github的hexo deploy命令报错问题（<strong>event.js 141 throw er; // Unhandled ‘error event’</strong>）的解决方法。</p>
 <h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><blockquote>
 <p>在根目录下找到<strong><em>_config.yml</em></strong>文件，编辑器打开此文件找到<br>repo，修改其值为：<a href="https://github账号:github密码@github.com/github用户名/github用户名.github.io.git" target="_blank" rel="external">https://github账号:github密码@github.com/github用户名/github用户名.github.io.git</a><br>，用户名密码要进行encodeURIComponent()编码。保存之后请使用git bash环境下提交hexo deploy即可解决问题。</p>
 </blockquote>
 
-        
-      
     </div>
   </div>
   

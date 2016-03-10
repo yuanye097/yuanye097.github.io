@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
 					</div>
 				</section>
 				
@@ -209,10 +209,7 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h2 id="昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。"><a href="#昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。" class="headerlink" title="昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。"></a>昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。</h2><p>一、offsetWidth/clientWidth/scrollWidth</p>
+        <h2 id="昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。"><a href="#昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。" class="headerlink" title="昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。"></a>昨天写了篇无缝滚动的学习小记，涉及到了scroll和offset知识点，这里我把我的理解的一些基础写下来，望大神给予指点。</h2><p>一、offsetWidth/clientWidth/scrollWidth</p>
 <p>1.无滚动条内容无溢出，如图所示：</p>
 <p><img src="http://7xnv26.com1.z0.glb.clouddn.com/static/images/nowidth.jpg" alt=""><br>根据图中所示，可看出<br>BOX.offsetWidth = 440px;包含了width+padding+border<br>BOX.clientWidth = 420px;包含了width+padding<br>Box.scrollWidth = 420px;包含了width+padding</p>
 <p>2.有滚动条内容无溢出，如图所示：</p>
@@ -228,8 +225,6 @@
 <p><img src="http://7xnv26.com1.z0.glb.clouddn.com/static/images/yesyesleft.jpg" alt=""><br>BOX.offsetLeft = BOX外边框距离BODY的边界的距离。<br>BOX.clientLeft = 10px;(box蓝色width左边界距离box实际width左边界的距离，即border！)<br>Box.scrollLeft = 内容向左边移动了多少像素，即移动距离。</p>
 <p>完毕。以上如有不对的地方望大神们给予指点。</p>
 
-        
-      
     </div>
   </div>
   

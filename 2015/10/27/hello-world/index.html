@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
 					</div>
 				</section>
 				
@@ -209,10 +209,7 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+        <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
 <p>在博客根目录下找到_config.yml，添加代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></p>
 <p>生成静态页<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
 <p>进入localhost:4000/sitemap.xml即可查看到效果。</p>
@@ -223,8 +220,6 @@
 <p>第二种替代方法（Alternate methods）：获取html meta，将&lt; meta &gt;放入themes&gt;yilia&gt;layout&gt;_partial的head.ejs中，然后hexo生成提交命令之后点击验证。</p>
 <p>4.进入谷歌站长工具提交sitemap，<a href="https://www.google.com/webmasters/tools" target="_blank" rel="external">页面地址</a></p>
 
-        
-      
     </div>
   </div>
   

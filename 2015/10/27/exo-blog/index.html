@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
 					</div>
 				</section>
 				
@@ -209,10 +209,7 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-      
-        
-        
-          <h3 id="安装GA统计步骤"><a href="#安装GA统计步骤" class="headerlink" title="安装GA统计步骤"></a>安装GA统计步骤</h3><p>1.先注册google analysis服务，以获得跟踪ID。</p>
+        <h3 id="安装GA统计步骤"><a href="#安装GA统计步骤" class="headerlink" title="安装GA统计步骤"></a>安装GA统计步骤</h3><p>1.先注册google analysis服务，以获得跟踪ID。</p>
 <p>2.获取跟踪JS(管理&gt;媒体资源管理&gt;跟踪信息)即可获得ID和JS代码。</p>
 <p>3.打开themes&gt;yilia&gt;layout&gt;_partial下的google-analytics.ejs，把JS代码粘贴此文件中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">'GoogleAnalyticsObject'</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  (i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),</span><br><span class="line">  m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line">  &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//www.google-analytics.com/analytics.js'</span>,<span class="string">'ga'</span>);</span><br><span class="line">  ga(<span class="string">'create'</span>, <span class="string">'your_GAID'</span>, <span class="string">'auto'</span>);</span><br><span class="line">  ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>4.设置google-analytics，打开themes&gt;yilia的_config.yml文件，输入：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  id: your_GAID</span><br><span class="line">  site: auto</span><br></pre></td></tr></table></figure></p>
@@ -222,8 +219,6 @@
 <p> 生成静态页提交github。</p>
 <p> PS：其他样式请点击<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>。</p>
 
-        
-      
     </div>
   </div>
   
