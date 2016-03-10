@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>计时器 | hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="undefined">
-  <meta name="description" content="昨天晚上写了段获取当前时间代码与倒计时代码。这里做个小小笔记。">
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="昨天晚上观看教程视频，了解到了date对象的一些基础用法，然后写了段获取当前时间代码与倒计时代码。这里做个小小笔记。">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
 					</div>
 				</section>
 				
@@ -178,7 +178,7 @@
       <div class="body-wrap"><article id="post-计时器" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
 <a href="/2015/11/20/计时器/" class="article-date">
-  	<time datetime="2015-11-20T06:23:46.000Z" itemprop="datePublished">2015-11-20</time>
+  	<time datetime="2015-11-20T06:23:00.000Z" itemprop="datePublished">2015-11-20</time>
 </a>
 </div>
 
@@ -196,12 +196,21 @@
 
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
         
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
+	</div>
+
 
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <h2 id="昨天晚上写了段获取当前时间代码与倒计时代码。这里做个小小笔记。"><a href="#昨天晚上写了段获取当前时间代码与倒计时代码。这里做个小小笔记。" class="headerlink" title="昨天晚上写了段获取当前时间代码与倒计时代码。这里做个小小笔记。"></a>昨天晚上写了段获取当前时间代码与倒计时代码。这里做个小小笔记。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"timeThis"</span>&gt;</span>现在时间是：<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"NCEE"</span>&gt;</span>距离高考倒计时还有：天<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <p>昨天晚上观看教程视频，了解到了date对象的一些基础用法，然后写了段获取当前时间代码与倒计时代码。这里做个小小笔记。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"timeThis"</span>&gt;</span>现在时间是：<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"NCEE"</span>&gt;</span>距离高考倒计时还有：天<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    	<span class="keyword">var</span> timeThis = $(<span class="string">"#timeThis"</span>), NCEE_Text = $(<span class="string">"#NCEE"</span>);</span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">var</span> </span><br><span class="line">    		NowTime = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    		NowYear = NowTime.getFullYear(),</span><br><span class="line">    		NowMonth = NowTime.getMonth()+<span class="number">1</span>,</span><br><span class="line">    		NowDate = NowTime.getDate(),</span><br><span class="line">    		NowDay = NowTime.getDay(),</span><br><span class="line">    		XQday = [<span class="string">"星期日"</span>,<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>,<span class="string">"星期四"</span>,<span class="string">"星期五"</span>,<span class="string">"星期六"</span>],</span><br><span class="line">    		NowHour = NowTime.getHours(),</span><br><span class="line">    		NowMinutes = NowTime.getMinutes(),</span><br><span class="line">    		NowSeconds = NowTime.getSeconds();</span><br><span class="line">    		<span class="function"><span class="keyword">function</span> <span class="title">checkTime</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">return</span> i = ( i &lt; <span class="number">10</span>) ? <span class="string">"0"</span> + i : i;</span><br><span class="line">			&#125;;</span><br><span class="line">    		timeThis.html(<span class="string">"现在时间是："</span>+NowYear + <span class="string">"年"</span>+ NowMonth + <span class="string">"月"</span> +  NowDate + <span class="string">"日"</span> +XQday[NowDay] + NowHour + <span class="string">":"</span> + checkTime(NowMinutes) + <span class="string">":"</span> +checkTime(NowSeconds));</span><br><span class="line">    	&#125;;</span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">Countdown</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">var</span> NowTime = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    			futureTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2016,6,6"</span>),</span><br><span class="line">    			Time_difference = (futureTime.getTime() - NowTime.getTime()) / <span class="number">1000</span>,</span><br><span class="line">    			<span class="comment">//1天 ＝ 24小时 1小时 ＝ 60分 1分钟 ＝ 60秒 1秒 ＝ 1000毫秒</span></span><br><span class="line">    			diff_Day = Time_difference / (<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>) | <span class="number">0</span>,</span><br><span class="line">    			diff_hours = (Time_difference / (<span class="number">60</span> * <span class="number">60</span>)) % <span class="number">24</span> | <span class="number">0</span>,</span><br><span class="line">    			diff_m = (Time_difference / <span class="number">60</span>) % <span class="number">60</span> | <span class="number">0</span>,</span><br><span class="line">    			diff_s = Time_difference % <span class="number">60</span> | <span class="number">0</span>;</span><br><span class="line">    		NCEE_Text.html(<span class="string">"距离高考倒计时还有："</span>+ diff_Day +<span class="string">"天"</span> + diff_hours + <span class="string">"小时"</span> + diff_m + <span class="string">"分钟"</span> + diff_s + <span class="string">"秒"</span>);</span><br><span class="line">    	&#125;;</span><br><span class="line">    	setInterval(showTime,<span class="number">1000</span>);</span><br><span class="line">    	setInterval(Countdown,<span class="number">1000</span>);</span><br><span class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
     </div>
   </div>

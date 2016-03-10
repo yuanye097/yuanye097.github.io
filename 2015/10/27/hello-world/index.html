@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>hexo向google提交sitemap | hexo荡漾的web博客|傻屌一枚</title>
   <meta name="keywords" content="hexo">
-  <meta name="description" content="一、安装sitemap1&amp;amp;lt;/">
+  <meta name="description" content="一、安装sitemap npm install hexo-generator-sitemap –save  在博客根目录下找到_config.ym">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
 					</div>
 				</section>
 				
@@ -209,10 +209,18 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>在博客根目录下找到_config.yml，添加代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></p>
-<p>生成静态页<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
-<p>进入localhost:4000/sitemap.xml即可查看到效果。</p>
+        <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><blockquote>
+<p>npm install hexo-generator-sitemap –save</p>
+</blockquote>
+<p>在博客根目录下找到_config.yml，添加代码：</p>
+<blockquote>
+<p>sitemap:<br> path: sitemap.xml</p>
+</blockquote>
+<p>生成静态页</p>
+<blockquote>
+<p>hexo g</p>
+</blockquote>
+<p>进入localhost:4000/sitemap.xml即可查看到效果。<br><a id="more"></a></p>
 <h3 id="二、向谷歌提交sitemap"><a href="#二、向谷歌提交sitemap" class="headerlink" title="二、向谷歌提交sitemap"></a>二、向谷歌提交sitemap</h3><p>1.登陆<a href="https://www.google.com/webmasters/verification/home?hl=en" target="_blank" rel="external">Webmaster Central</a>。</p>
 <p>2.点击“ADD A SITE”红色按钮，输入网址点击continue按钮。</p>
 <p>3.进入验证页面，有两种方法：</p>

@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a> <a href="/tags/无缝滚动/" style="font-size: 10px;">无缝滚动</a> <a href="/tags/滑动门/" style="font-size: 10px;">滑动门</a>
+						<a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 13.33px;">sass</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
 					</div>
 				</section>
 				
@@ -196,19 +196,7 @@
 
       </header>
     <div class="article-entry" itemprop="articleBody">
-        <h3 id="一、获得hexo七牛插件所需信息"><a href="#一、获得hexo七牛插件所需信息" class="headerlink" title="一、获得hexo七牛插件所需信息"></a>一、获得hexo七牛插件所需信息</h3><p>1.进入<a href="https://portal.qiniu.com/" target="_blank" rel="external">七牛云官网</a>，申请账号，要求实名制，身份证号啊，身份证照片啊等等。。如果您是好心人可以帮我多加5G流量，小弟在此万分感谢。<a href="https://portal.qiniu.com/signup?code=3lmd5kybbttn6" target="_blank" rel="external">好心人链接</a>，实名验证完毕之后，获取密钥AccessKey/SecretKey</p>
-<p>2.创建个人空间获取空间名称</p>
-<p>3.进入空间设置获取七牛域名</p>
-<p>其他七牛设置根据需求自己配置吧。</p>
-<h3 id="二、配置七牛云插件"><a href="#二、配置七牛云插件" class="headerlink" title="二、配置七牛云插件"></a>二、配置七牛云插件</h3><p>1.安装：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-qiniu-sync --save</span><br></pre></td></tr></table></figure></p>
-<p>2.打开博客根目录下的<strong>_config.yml</strong>，配置如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">plugins:</span><br><span class="line">  - hexo-qiniu-sync #七牛云</span><br><span class="line">qiniu:</span><br><span class="line">  offline: false</span><br><span class="line">  sync: true</span><br><span class="line">  bucket: 空间名称</span><br><span class="line">  access_key: your_access_key</span><br><span class="line">  secret_key: your_secret_key</span><br><span class="line">  dirPrefix: /static</span><br><span class="line">  urlPrefix: http://7xnv26.com1.z0.glb.clouddn.com/static</span><br><span class="line">  local_dir: static //这个是需要传到七牛云的文件名，可以自行更改，images/js/css文件会在此文件夹下生成</span><br><span class="line">  update_exist: true</span><br><span class="line">  image:</span><br><span class="line">    folder: images</span><br><span class="line">    extend: </span><br><span class="line">  js:</span><br><span class="line">    folder: js</span><br><span class="line">  css:</span><br><span class="line">    folder: css</span><br><span class="line">/*七牛云存储设置</span><br><span class="line">offline：是否离线. 离线状态将使用本地地址渲染</span><br><span class="line">sync:是否同步</span><br><span class="line">bucket:空间名称.</span><br><span class="line">access_key:上传密钥AccessKey</span><br><span class="line">secret_key:上传密钥SecretKey</span><br><span class="line">dirPrefix:上传的资源子目录前缀.如设置，需与urlPrefix同步 </span><br><span class="line">urlPrefix:外链前缀. </span><br><span class="line">local_dir:本地目录.</span><br><span class="line">update_exist:是否更新已经上传过的文件(仅文件大小不同或在上次上传后进行更新的才会重新上传)</span><br><span class="line">image/js/css:子参数folder为不同静态资源种类的目录名称，一般不需要改动</span><br><span class="line">image.extend:这是个特殊参数，用于生成缩略图或加水印等操作。具体请参考http://developer.qiniu.com/docs/v6/api/reference/fop/imag可使用基本图片处理、高级图片处理、图片水印处理这3个接口。例如 ?imageView2/2/w/500 即生成宽度最多500px的缩略图</span><br></pre></td></tr></table></figure></p>
-<p>以上基本配置已完成，如需高级配置可参考<a href="https://github.com/gyk001/hexo-qiniu-sync" target="_blank" rel="external">官方API</a>。</p>
-<h3 id="三、生成静态页"><a href="#三、生成静态页" class="headerlink" title="三、生成静态页"></a>三、生成静态页</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="四、命令"><a href="#四、命令" class="headerlink" title="四、命令"></a>四、命令</h3><p>1.显示插件版本，作者及Github地址信息等<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo qiniu i</span><br></pre></td></tr></table></figure></p>
-<p>2.同步静态资源到七牛空间<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo qiniu s</span><br></pre></td></tr></table></figure></p>
-<p>3.同步静态资源到七牛空间，且会同步上传那些本地与七牛空间有差异的文件。这个命令会无视 update_exist 配置。对比规则请看 update_exist 配置参数说明。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo qiniu s2</span><br></pre></td></tr></table></figure></p>
-<p>小小自嘲下，hexo同步七牛云搞了我3天，主要卡在了配置和命令上！哎~~~继续上<a href="http://www.52cik.com" target="_blank" rel="external">码神</a>学习</p>
-
+        <h3 id="一、获得hexo七牛插件所需信息"><a href="#一、获得hexo七牛插件所需信息" class="headerlink" title="一、获得hexo七牛插件所需信息"></a>一、获得hexo七牛插件所需信息</h3><p>1.进入<a href="https://portal.qiniu.com/">七牛云官网</a>，申请账号，要求实名制，身份证号啊，身份证照片啊等等。。如果您是好心人可以帮我多加5G流量，小弟在此万分感谢。<a href="https://portal.qiniu.com/signup?code=3lmd5kybbttn6">好心人链接</a>，实名验证完毕之后，获取密钥AccessKey/SecretKey<br>
     </div>
 
     <div class="article-info article-info-index">
@@ -223,7 +211,11 @@
 	</div>
 
 
-            <div class="clearfix"></div>
+      
+        <p class="article-more-link">
+          <a  href="/2015/10/28/hexo-blog-1/#more">more >></a>
+        </p>
+      <div class="clearfix"></div>
     </div>
   </div>
 </article>
@@ -250,17 +242,18 @@
 
       </header>
     <div class="article-entry" itemprop="articleBody">
-        <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>在博客根目录下找到_config.yml，添加代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure></p>
-<p>生成静态页<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
-<p>进入localhost:4000/sitemap.xml即可查看到效果。</p>
-<h3 id="二、向谷歌提交sitemap"><a href="#二、向谷歌提交sitemap" class="headerlink" title="二、向谷歌提交sitemap"></a>二、向谷歌提交sitemap</h3><p>1.登陆<a href="https://www.google.com/webmasters/verification/home?hl=en" target="_blank" rel="external">Webmaster Central</a>。</p>
-<p>2.点击“ADD A SITE”红色按钮，输入网址点击continue按钮。</p>
-<p>3.进入验证页面，有两种方法：</p>
-<p>第一种推荐方法（Recommended method）：下载HTML验证文件放入根目录下，然后hexo生成提交命令之后点击Verify红色按钮验证。</p>
-<p>第二种替代方法（Alternate methods）：获取html meta，将&lt; meta &gt;放入themes&gt;yilia&gt;layout&gt;_partial的head.ejs中，然后hexo生成提交命令之后点击验证。</p>
-<p>4.进入谷歌站长工具提交sitemap，<a href="https://www.google.com/webmasters/tools" target="_blank" rel="external">页面地址</a></p>
-
+        <h3 id="一、安装sitemap"><a href="#一、安装sitemap" class="headerlink" title="一、安装sitemap"></a>一、安装sitemap</h3><blockquote>
+<p>npm install hexo-generator-sitemap –save</p>
+</blockquote>
+<p>在博客根目录下找到_config.yml，添加代码：</p>
+<blockquote>
+<p>sitemap:<br> path: sitemap.xml</p>
+</blockquote>
+<p>生成静态页</p>
+<blockquote>
+<p>hexo g</p>
+</blockquote>
+<p>进入localhost:4000/sitemap.xml即可查看到效果。<br>
     </div>
 
     <div class="article-info article-info-index">
@@ -275,7 +268,11 @@
 	</div>
 
 
-            <div class="clearfix"></div>
+      
+        <p class="article-more-link">
+          <a  href="/2015/10/27/hello-world/#more">more >></a>
+        </p>
+      <div class="clearfix"></div>
     </div>
   </div>
 </article>
@@ -304,14 +301,7 @@
     <div class="article-entry" itemprop="articleBody">
         <h3 id="安装GA统计步骤"><a href="#安装GA统计步骤" class="headerlink" title="安装GA统计步骤"></a>安装GA统计步骤</h3><p>1.先注册google analysis服务，以获得跟踪ID。</p>
 <p>2.获取跟踪JS(管理&gt;媒体资源管理&gt;跟踪信息)即可获得ID和JS代码。</p>
-<p>3.打开themes&gt;yilia&gt;layout&gt;_partial下的google-analytics.ejs，把JS代码粘贴此文件中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">'GoogleAnalyticsObject'</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  (i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),</span><br><span class="line">  m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line">  &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//www.google-analytics.com/analytics.js'</span>,<span class="string">'ga'</span>);</span><br><span class="line">  ga(<span class="string">'create'</span>, <span class="string">'your_GAID'</span>, <span class="string">'auto'</span>);</span><br><span class="line">  ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>4.设置google-analytics，打开themes&gt;yilia的_config.yml文件，输入：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  id: your_GAID</span><br><span class="line">  site: auto</span><br></pre></td></tr></table></figure></p>
-<p> 5.hexo g生成静态</p>
-<p> 6.hexo d提交github</p>
-<h3 id="添加绶带步骤"><a href="#添加绶带步骤" class="headerlink" title="添加绶带步骤"></a>添加绶带步骤</h3><p> 把以下代码粘贴到thems&gt;yilia&gt;layout&gt;layout.ejs中。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"https://github.com/your_name"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">style</span>=<span class="string">"position: absolute; top: 0; left: 0; border: 0;"</span> <span class="attr">src</span>=<span class="string">"https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67"</span> <span class="attr">alt</span>=<span class="string">"Fork me on GitHub"</span> <span class="attr">data-canonical-src</span>=<span class="string">"https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p> 生成静态页提交github。</p>
-<p> PS：其他样式请点击<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>。</p>
-
+<p>3.打开themes&gt;yilia&gt;layout&gt;_partial下的google-analytics.ejs，把JS代码粘贴此文件中。<br>
     </div>
 
     <div class="article-info article-info-index">
@@ -326,7 +316,11 @@
 	</div>
 
 
-            <div class="clearfix"></div>
+      
+        <p class="article-more-link">
+          <a  href="/2015/10/27/exo-blog/#more">more >></a>
+        </p>
+      <div class="clearfix"></div>
     </div>
   </div>
 </article>
@@ -354,14 +348,7 @@
       </header>
     <div class="article-entry" itemprop="articleBody">
         <p>默认情况下博客和文章是没有关键字keywords的，需要手动设置。</p>
-<h5 id="设置博客keywords方法："><a href="#设置博客keywords方法：" class="headerlink" title="设置博客keywords方法："></a>设置博客keywords方法：</h5><p>在博客根目录下找到<strong> _config.yml </strong>文件，在所示地方添加keyword: 关键字1,关键字2,关键字3…，采用英文逗号隔开。如下所示：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 网站名称</span><br><span class="line">description: 网站描述</span><br><span class="line">author: 作者姓名</span><br><span class="line">subtitle: 作者简介</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone:</span><br><span class="line">keywords: Web,HTML,CSS,JavaScript,hexo,前端 # 博客关键字</span><br></pre></td></tr></table></figure></p>
-<p>然后修改主题中模板，<strong> /themes/yilia/layout/_partial/head.ejs </strong>。<br>如下所示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*替换*/</span></span><br><span class="line">&lt;% <span class="keyword">if</span> (page.keywords)&#123; %&gt;&lt;meta name="keywords" content="&lt;%= page.keywords %&gt;"&gt;&lt;% &#125; %&gt;</span><br><span class="line">/*为*/</span><br><span class="line">&lt;% if (page.keywords)&#123; %&gt;</span><br><span class="line">&lt;meta name="keywords" content="&lt;%= page.keywords %&gt;,&lt;%= config.keywords %&gt;"&gt;</span><br><span class="line">&lt;% &#125; else if (config.keywords)&#123; %&gt;</span><br><span class="line">&lt;meta name="keywords" content="&lt;%= config.keywords %&gt;"&gt;</span><br><span class="line">&lt;%&#125; %&gt;</span><br></pre></td></tr></table></figure></p>
-<p>大概意思是如果页面有关键字，则用页面的关键字加上配置文件里面的关键字，如果没有关键字，则用配置文件的关键字。</p>
-<h5 id="设置文章keywords方法："><a href="#设置文章keywords方法：" class="headerlink" title="设置文章keywords方法："></a>设置文章keywords方法：</h5><ol>
-<li>在文章里面加入keywords:即可。</li>
-<li>也可以修改创建文章的模板<strong> 博客根目录/scaffolds/post.md </strong>，在最下面添加keywords:如下所示：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">tags:</span><br><span class="line">keywords:</span><br></pre></td></tr></table></figure></li>
-</ol>
-
+<h5 id="设置博客keywords方法："><a href="#设置博客keywords方法：" class="headerlink" title="设置博客keywords方法："></a>设置博客keywords方法：</h5><p>在博客根目录下找到<strong> _config.yml </strong>文件，在所示地方添加keyword: 关键字1,关键字2,关键字3…，采用英文逗号隔开。如下所示：<br>
     </div>
 
     <div class="article-info article-info-index">
@@ -376,7 +363,11 @@
 	</div>
 
 
-            <div class="clearfix"></div>
+      
+        <p class="article-more-link">
+          <a  href="/2015/10/26/name/#more">more >></a>
+        </p>
+      <div class="clearfix"></div>
     </div>
   </div>
 </article>
