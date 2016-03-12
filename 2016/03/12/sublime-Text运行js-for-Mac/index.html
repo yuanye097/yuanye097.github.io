@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Tag: markdown | hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="undefined">
-  <meta name="description" content="热爱web前端技术，2012年接触html/css，2013年接触javascript，至今已4年，仍然是个傻屌一枚，这路走来感谢码神，继续朝着顶端买进！">
+  <title>sublime Text运行js控制台 for mac | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="sublime Text">
+  <meta name="description" content="网上有很多教程，这里我说说node方式运行。首先需要安装node，从官网下载即可，终端输入node -v查看是否安装成功。然后打开sublime Text，运行Tools&amp;amp;gt;Build System&amp;amp;gt;New Build System之后会启动一个新窗口untitled.subl">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,53 +175,73 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/09/markdown/" class="archive-article-date">
-  	<time datetime="2016-03-09T13:22:00.000Z" itemprop="datePublished">Mar 9</time>
+      <div class="body-wrap"><article id="post-sublime-Text运行js-for-Mac" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/12/sublime-Text运行js-for-Mac/" class="article-date">
+  	<time datetime="2016-03-12T05:35:00.000Z" itemprop="datePublished">2016-03-12</time>
 </a>
-        </div>
-    	 
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/09/markdown/">MarkDown</a>
+    <h1 class="article-title" itemprop="name">
+      sublime Text运行js控制台 for mac
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-Text/">sublime Text</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <p>网上有很多教程，这里我说说node方式运行。<br>首先需要安装node，从官网下载即可，终端输入<code>node -v</code>查看是否安装成功。<br>然后打开<code>sublime Text</code>，运行<code>Tools&gt;Build System&gt;New Build System</code>之后会启动一个新窗口<code>untitled.sublime-build</code>。在此文件中输入：<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">"path"</span>: <span class="string">"/usr/local/bin/node"</span>,</span><br><span class="line">    <span class="string">"file_regex"</span>: <span class="string">"^[ ]*File \"(...*?)\", line ([0-9]*)"</span>,</span><br><span class="line">    <span class="string">"working_dir"</span>: <span class="string">"$&#123;project_path:$&#123;folder&#125;&#125;"</span>,</span><br><span class="line">    <span class="string">"selector"</span>: <span class="string">"source.js"</span>,</span><br><span class="line">    <span class="string">"shell"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"encoding"</span>: <span class="string">"utf-8"</span>,</span><br><span class="line">    <span class="string">"windows"</span>: &#123;</span><br><span class="line">        <span class="string">"cmd"</span>: [<span class="string">"taskkill /F /IM node.exe &gt;nul 2&gt;nul &amp; node"</span>, <span class="string">"$file"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"linux"</span>: &#123;</span><br><span class="line">        <span class="string">"cmd"</span>: [<span class="string">"killall node; node"</span>, <span class="string">"$file"</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"osx"</span>: &#123;</span><br><span class="line">        <span class="string">"cmd"</span>: [<span class="string">"killall node &gt;/dev/null 2&gt;&amp;1; //usr/local/bin/node $file"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>“path” 和 “osx的cmd” 输入node路径，如果不知道node路径可以在终端输入<code>which node</code>查看</p>
 
-    
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/12/数据结构与算法javascript描述/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          数据结构与算法javascript描述学习笔记（1）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/09/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MarkDown</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="sublime-Text运行js-for-Mac" data-title="sublime Text运行js控制台 for mac" data-url="http://www.yuanye097.com/2016/03/12/sublime-Text运行js-for-Mac/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
 
 </div>
       <footer id="footer">
@@ -247,9 +267,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
