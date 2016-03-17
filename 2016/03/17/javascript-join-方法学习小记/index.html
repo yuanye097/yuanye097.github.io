@@ -211,8 +211,7 @@
     <div class="article-entry" itemprop="articleBody">
         <h3 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h3><p>定义：join() 方法将数组中的所有元素连接成一个字符串。</p>
 <p>join()语法：</p>
-<p><code>str = arr.join([separator = &#39;,&#39;])</code></p>
-<p><strong>参数：</strong><br>separator:可选。用于指定链接每个数组元素的分隔符。分隔符会被转成字符串类型；如果省略的话，默认为一个逗号。如果seprator是一个空字符串，那么数组中的所有元素将被直接链接。</p>
+<p><code>str = arr.join([separator = &#39;,&#39;])</code><br><a id="more"></a><br><strong>参数：</strong><br>separator:可选。用于指定链接每个数组元素的分隔符。分隔符会被转成字符串类型；如果省略的话，默认为一个逗号。如果seprator是一个空字符串，那么数组中的所有元素将被直接链接。</p>
 <p><strong>描述：</strong><br>所有的数组元素被转换为字符串，再用一个分隔符将这些字符串连接起来。<br>如果元素是undefined或者null,则会转化为空字符串。</p>
 <p>示例：使用四种不同的分隔符连接数组元素</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'Wind'</span>, <span class="string">'Rain'</span>, <span class="string">'Fire'</span>];</span><br><span class="line"><span class="keyword">var</span> myVar1 = a.join();      <span class="comment">// "Wind,Rain,Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar2 = a.join(<span class="string">', '</span>);  <span class="comment">// "Wind, Rain, Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar3 = a.join(<span class="string">' + '</span>); <span class="comment">// "Wind + Rain + Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar4 = a.join(<span class="string">''</span>);    <span class="comment">// "WindRainFire"</span></span><br></pre></td></tr></table></figure>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>数据结构与算法JavaScript描述学习笔记（6） | hexo荡漾的web博客|傻屌一枚</title>
+  <title>javascript splice()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
   <meta name="keywords" content="javascript">
-  <meta name="description" content="第六天  2.6 由已有数组创建新数组concat()和splice()方法允许通过已有数组创建新数组。concat()方法可以合并多个数组创建一个新数组">
+  <meta name="description" content="Array.prototype.splice()splice()方法用新元素替换旧元素，以此修改数组的内容。">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,10 +175,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-数据结构与算法JavaScript描述学习笔记（6）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-splice-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
-<a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" class="article-date">
-  	<time datetime="2016-03-17T02:23:00.000Z" itemprop="datePublished">2016-03-17</time>
+<a href="/2016/03/17/javascript-splice-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-17T06:08:00.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
 </div>
 
@@ -188,7 +188,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构与算法JavaScript描述学习笔记（6）
+      javascript splice()方法学习小记
     </h1>
   
 
@@ -209,31 +209,25 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <ul>
-<li>第六天</li>
-</ul>
-<h3 id="2-6-由已有数组创建新数组"><a href="#2-6-由已有数组创建新数组" class="headerlink" title="2.6 由已有数组创建新数组"></a>2.6 由已有数组创建新数组</h3><p>concat()和splice()方法允许通过已有数组创建新数组。concat()方法可以合并多个数组创建一个新数组，splice()方法截取一个数组的子集创建一个新数组。<br><a id="more"></a><br><strong>concat()</strong></p>
-<p>concat()方法的发起者是一个数组，参数是另一个数组。作为参数的数组，其中的所有元素都被连接到调用concat()方法的数组后面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cisDept = [<span class="string">"Mike"</span>, <span class="string">"Clayton"</span>, <span class="string">"Terrill"</span>, <span class="string">"Danny"</span>, <span class="string">"Jennifer"</span>];</span><br><span class="line"><span class="keyword">var</span> dmpDept = [<span class="string">"Raymond"</span>, <span class="string">"Cynthia"</span>, <span class="string">"Bryan"</span>];</span><br><span class="line"><span class="keyword">var</span> coned = cisDept.concat(depDept);</span><br><span class="line"><span class="built_in">console</span>.log(coned); </span><br><span class="line"><span class="comment">// ["Mike", "Clayton", "Terrill", "Danny", "Jennifer", "Raymond", "Cynthia", "Bryan"]</span></span><br><span class="line">coned = dmpDept.concat(cisDept);</span><br><span class="line"><span class="built_in">console</span>.log(coned);</span><br><span class="line"><span class="comment">// ["Raymond", "Cynthia", "Bryan", "Mike", "Clayton", "Terrill", "Danny", "Jennifer"]</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>splice()</strong></p>
-<p>splice()方法从现有数组里截取一个新数组。该方法的第一个参数是截取的起始索引，第二个参数是截取的长度。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"Mike"</span>,<span class="string">"Clayton"</span>,<span class="string">"Terrill"</span>,<span class="string">"Raymond"</span>,<span class="string">"Cynthia"</span>,<span class="string">"Danny"</span>,<span class="string">"Jennifer"</span>];</span><br><span class="line"><span class="keyword">var</span> dmpDept = arr.splice(<span class="number">3</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dmpDept); <span class="comment">// [ 'Raymond', 'Cynthia', 'Danny' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);[ <span class="string">'Mike'</span>, <span class="string">'Clayton'</span>, <span class="string">'Terrill'</span>, <span class="string">'Jennifer'</span> ]</span><br><span class="line"><span class="comment">//splice()方法更改了原数组。</span></span><br></pre></td></tr></table></figure>
+        <h3 id="Array-prototype-splice"><a href="#Array-prototype-splice" class="headerlink" title="Array.prototype.splice()"></a>Array.prototype.splice()</h3><p>splice()方法用新元素替换旧元素，以此修改数组的内容。</p>
+<p><strong>语法：</strong><br><code>array.splice(start, deleteCount[, item1[, item2[, ...]]])</code><br><a id="more"></a><br><strong>参数：</strong></p>
+<p>start：从数组的哪一位开始修改内容。如果超出了数组的长度，则从数组末尾开始添加内容；如果是负值，则表示从数组末位开始的第几位。<br>deleteCount：整数，表示要移除的数组元素的个数。如果deleteCount是0，则不移除元素。这种情况下，至少应添加一个新元素。如果deleteCount大于start之后的元素的总数，则从start后面的元素都被删除(含第start位)。<br>itemN：要添加进数组的元素。如果不指定，则splice()只删除数组元素。</p>
+<p><strong>返回值：</strong></p>
+<p>由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</p>
+<p><strong>描述：</strong></p>
+<p>如果添加进数组的元素个数不等于被删除的元素个数，数组的长度会发生相应的改变。</p>
+<p><strong>提示和注释：</strong></p>
+<p>注释：请注意，splice()方法与slice()方法的作用是不同的，splice() 方法会直接对数组进行修改。</p>
+<p>示例：splice()基础用法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFish = [<span class="string">"angel"</span>, <span class="string">"clown"</span>, <span class="string">"mandarin"</span>, <span class="string">"surgeon"</span>];</span><br><span class="line"><span class="keyword">var</span> removed = myFish.splice(<span class="number">2</span>,<span class="number">0</span>,<span class="string">"dram"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myFish);</span><br><span class="line"><span class="comment">// ["angel", "clown", "dram", "mandarin", "surgeon"]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);</span><br><span class="line"><span class="comment">// []</span></span><br><span class="line"></span><br><span class="line">removed = myFish.splice(<span class="number">3</span>,<span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myFish);</span><br><span class="line"><span class="comment">// ["angel", "clown", "dram", "surgeon"]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);</span><br><span class="line"><span class="comment">// ["mandarin"]</span></span><br><span class="line"></span><br><span class="line">removed = myFish.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">"trumet"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myFish);</span><br><span class="line"><span class="comment">// ["angel", "clown", "trumet", "surgeon"]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);</span><br><span class="line"><span class="comment">// ["dram"]</span></span><br><span class="line"></span><br><span class="line">removed = myFish.splice(<span class="number">0</span>, <span class="number">2</span>, <span class="string">"parrot"</span>, <span class="string">"anemone"</span>, <span class="string">"blue"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(myFish);</span><br><span class="line"><span class="comment">// ["parrot", "anemone", "blue", "trumet", "surgeon"]</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);</span><br><span class="line"><span class="comment">// ["angel", "clown"]</span></span><br><span class="line"></span><br><span class="line">removed = myFish.splice(<span class="number">3</span>, <span class="built_in">Number</span>.MAX_VALUE);</span><br><span class="line"><span class="built_in">console</span>.log(myFish);</span><br><span class="line"><span class="comment">// ["parrot", "anemone", "blue"];</span></span><br><span class="line"><span class="built_in">console</span>.log(removed);</span><br><span class="line"><span class="comment">// ["trumet", "surgeon"]</span></span><br></pre></td></tr></table></figure></p>
+
     </div>
   </div>
   
 <nav id="article-nav">
   
-    <a href="/2016/03/17/javascript-concat-方法学习小记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          javascript concat()方法学习小记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/17/javascript-join-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript join()方法学习小记</div>
+    <a href="/2016/03/17/javascript-concat-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript concat()方法学习小记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -244,7 +238,7 @@
 
 <div class="duoshuo">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="数据结构与算法JavaScript描述学习笔记（6）" data-title="数据结构与算法JavaScript描述学习笔记（6）" data-url="http://www.yuanye097.com/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/"></div>
+  <div class="ds-thread" data-thread-key="javascript-splice-方法学习小记" data-title="javascript splice()方法学习小记" data-url="http://www.yuanye097.com/2016/03/17/javascript-splice-方法学习小记/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script>var duoshuoQuery={short_name:"yuanye097"};</script>

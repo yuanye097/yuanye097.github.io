@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>数据结构与算法JavaScript描述学习笔记（6） | hexo荡漾的web博客|傻屌一枚</title>
+  <title>javascript concat()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
   <meta name="keywords" content="javascript">
-  <meta name="description" content="第六天  2.6 由已有数组创建新数组concat()和splice()方法允许通过已有数组创建新数组。concat()方法可以合并多个数组创建一个新数组">
+  <meta name="description" content="Array.prototype.concat()概述：将传入的数组或非数组值与原数组合并，组成一个">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,10 +175,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-数据结构与算法JavaScript描述学习笔记（6）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-concat-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
-<a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" class="article-date">
-  	<time datetime="2016-03-17T02:23:00.000Z" itemprop="datePublished">2016-03-17</time>
+<a href="/2016/03/17/javascript-concat-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-17T03:14:00.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
 </div>
 
@@ -188,7 +188,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构与算法JavaScript描述学习笔记（6）
+      javascript concat()方法学习小记
     </h1>
   
 
@@ -209,31 +209,40 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <ul>
-<li>第六天</li>
+        <h3 id="Array-prototype-concat"><a href="#Array-prototype-concat" class="headerlink" title="Array.prototype.concat()"></a>Array.prototype.concat()</h3><p><strong>概述：</strong><br>将传入的数组或非数组值与原数组合并，组成一个新的数组并返回。</p>
+<p><strong>语法：</strong><br><code>array.concat(value1, value2, ..., valueN)</code><br><a id="more"></a><br>valueN：需要与原数组合并的数组或非数组值。</p>
+<p><strong>描述：</strong><br>concat()方法将创建一个新的数组，然后将调用它的对象(this指向的对象)中的元素以及所有参数中的数组类型的参数中的元素以及非数组类型的参数本身按照顺序放入这个新数组中，并返回该数组。<br>concat()方法并不修改调用它的对象(this指向的对象)和参数中的各个数组本身的值，而是将他们的每个元素拷贝一份放在组合成的新数组中。原数组中的元素有两种被拷贝的方式：</p>
+<ul>
+<li><p>对象引用(非对象直接量)：concat()方法会复制对象引用放到组合的新数组里，原数组和新数组中的对象引用都指向同一个实际的对象，所以，当实际的对象被修改时，两个数组也同时会被修改。</p>
+</li>
+<li><p>字符串和数字(是原始值，而不是包装原始值的String和Number对象)：concat()方法会复制字符串和数字的值放到新数组里。</p>
+</li>
 </ul>
-<h3 id="2-6-由已有数组创建新数组"><a href="#2-6-由已有数组创建新数组" class="headerlink" title="2.6 由已有数组创建新数组"></a>2.6 由已有数组创建新数组</h3><p>concat()和splice()方法允许通过已有数组创建新数组。concat()方法可以合并多个数组创建一个新数组，splice()方法截取一个数组的子集创建一个新数组。<br><a id="more"></a><br><strong>concat()</strong></p>
-<p>concat()方法的发起者是一个数组，参数是另一个数组。作为参数的数组，其中的所有元素都被连接到调用concat()方法的数组后面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cisDept = [<span class="string">"Mike"</span>, <span class="string">"Clayton"</span>, <span class="string">"Terrill"</span>, <span class="string">"Danny"</span>, <span class="string">"Jennifer"</span>];</span><br><span class="line"><span class="keyword">var</span> dmpDept = [<span class="string">"Raymond"</span>, <span class="string">"Cynthia"</span>, <span class="string">"Bryan"</span>];</span><br><span class="line"><span class="keyword">var</span> coned = cisDept.concat(depDept);</span><br><span class="line"><span class="built_in">console</span>.log(coned); </span><br><span class="line"><span class="comment">// ["Mike", "Clayton", "Terrill", "Danny", "Jennifer", "Raymond", "Cynthia", "Bryan"]</span></span><br><span class="line">coned = dmpDept.concat(cisDept);</span><br><span class="line"><span class="built_in">console</span>.log(coned);</span><br><span class="line"><span class="comment">// ["Raymond", "Cynthia", "Bryan", "Mike", "Clayton", "Terrill", "Danny", "Jennifer"]</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>splice()</strong></p>
-<p>splice()方法从现有数组里截取一个新数组。该方法的第一个参数是截取的起始索引，第二个参数是截取的长度。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"Mike"</span>,<span class="string">"Clayton"</span>,<span class="string">"Terrill"</span>,<span class="string">"Raymond"</span>,<span class="string">"Cynthia"</span>,<span class="string">"Danny"</span>,<span class="string">"Jennifer"</span>];</span><br><span class="line"><span class="keyword">var</span> dmpDept = arr.splice(<span class="number">3</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(dmpDept); <span class="comment">// [ 'Raymond', 'Cynthia', 'Danny' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);[ <span class="string">'Mike'</span>, <span class="string">'Clayton'</span>, <span class="string">'Terrill'</span>, <span class="string">'Jennifer'</span> ]</span><br><span class="line"><span class="comment">//splice()方法更改了原数组。</span></span><br></pre></td></tr></table></figure>
+<p>对新数组的任何操作都不会对原数组产生影响，反之亦然。</p>
+<p>示例：连接两个数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alpha = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">var</span> numeric = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> alphaNumeric = alpha.concat(numeric);</span><br><span class="line"><span class="built_in">console</span>.log(alphaNumeric);</span><br><span class="line"><span class="comment">// ["a", "b", "c", 1, 2, 3];</span></span><br><span class="line"><span class="built_in">console</span>.log(alpha);</span><br><span class="line"><span class="comment">// [ 'a', 'b', 'c' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(numeric);</span><br><span class="line"><span class="comment">// [ 1, 2, 3 ];</span></span><br></pre></td></tr></table></figure></p>
+<p>原始数组alpha和numeric未被修改。</p>
+<p>示例：连接三个数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> arr3 = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> arrs = arr1.concat(arr2,arr3);</span><br><span class="line"><span class="built_in">console</span>.log(arrs);</span><br><span class="line"><span class="comment">// [1, 2, 3, 4, 5, 6, 7, 8, 9];</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1);</span><br><span class="line"><span class="comment">// [1, 2, 3];</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2);</span><br><span class="line"><span class="comment">// [4, 5, 6];</span></span><br><span class="line"><span class="built_in">console</span>.log(arr3);</span><br><span class="line"><span class="comment">// [7, 8, 9];</span></span><br></pre></td></tr></table></figure></p>
+<p>原始数组arr1、arr2、arr3未被修改。</p>
+<p>示例：将非数组值合并到数组里<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> alpha = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">var</span> alphaNumeric = alpha.concat(<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(alphaNumeric);</span><br><span class="line"><span class="comment">// [ 'a', 'b', 'c', 1, 2, 3 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(alpha);</span><br><span class="line"><span class="comment">// [ 'a', 'b', 'c' ]</span></span><br></pre></td></tr></table></figure></p>
+<p>原alpha数组未被修改</p>
+
     </div>
   </div>
   
 <nav id="article-nav">
   
-    <a href="/2016/03/17/javascript-concat-方法学习小记/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/17/javascript-splice-方法学习小记/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          javascript concat()方法学习小记
+          javascript splice()方法学习小记
         
       </div>
     </a>
   
   
-    <a href="/2016/03/17/javascript-join-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript join()方法学习小记</div>
+    <a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法JavaScript描述学习笔记（6）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -244,7 +253,7 @@
 
 <div class="duoshuo">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="数据结构与算法JavaScript描述学习笔记（6）" data-title="数据结构与算法JavaScript描述学习笔记（6）" data-url="http://www.yuanye097.com/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/"></div>
+  <div class="ds-thread" data-thread-key="javascript-concat-方法学习小记" data-title="javascript concat()方法学习小记" data-url="http://www.yuanye097.com/2016/03/17/javascript-concat-方法学习小记/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script>var duoshuoQuery={short_name:"yuanye097"};</script>
