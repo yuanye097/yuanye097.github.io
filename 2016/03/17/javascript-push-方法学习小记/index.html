@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="Web,HTML,CSS,JavaScript,hexo,前端">
-  <meta name="description" content="热爱web前端技术，2012年接触html/css，2013年接触javascript，至今已4年，仍然是个傻屌一枚，这路走来感谢码神，继续朝着顶端买进！">
+  <title>javascript push()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="Array.prototype.push()push()方法添加一个或多个元素到数组的末尾，并返回数组新的长度(length属性值)。 &amp;amp;lt;">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,12 +175,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-exo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-push-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
-<a href="/2015/10/27/exo-blog/" class="article-date">
-  	<time datetime="2015-10-27T03:36:00.000Z" itemprop="datePublished">2015-10-27</time>
+<a href="/2016/03/17/javascript-push-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-17T09:17:00.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
 </div>
 
@@ -189,136 +187,63 @@
           <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/27/exo-blog/">为hexo添加GA统计和绶带</a>
+    <h1 class="article-title" itemprop="name">
+      javascript push()方法学习小记
     </h1>
   
 
       </header>
-    <div class="article-entry" itemprop="articleBody">
-        <h3 id="安装GA统计步骤"><a href="#安装GA统计步骤" class="headerlink" title="安装GA统计步骤"></a>安装GA统计步骤</h3><p>1.先注册google analysis服务，以获得跟踪ID。</p>
-<p>2.获取跟踪JS(管理&gt;媒体资源管理&gt;跟踪信息)即可获得ID和JS代码。</p>
-<p>3.打开themes&gt;yilia&gt;layout&gt;_partial下的google-analytics.ejs，把JS代码粘贴此文件中。<br>
-    </div>
 
-    <div class="article-info article-info-index">
-      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
-      
+        
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/菜屌日妓/">菜屌日妓</a>
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/27/exo-blog/#more">more >></a>
-        </p>
-      <div class="clearfix"></div>
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <h3 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h3><p>push()方法添加一个或多个元素到数组的末尾，并返回数组新的长度(length属性值)。</p>
+<p><strong>push()语法：</strong></p>
+<p><code>arr.push(element1, ..., elementN)</code><br><a id="more"></a><br><strong>push()参数：</strong></p>
+<p>elementN:被添加到数组末尾的元素。<br>返回值：当调用该方法时，新的length属性值将被返回。</p>
+<p><strong>push()描述：</strong></p>
+<p>push()方法把值添加到数组中。<br>push()方法有意具有通用性。该方法和call()或apply()一起使用时，可应用在类似数组的对象上。push()方法根据length属性来决定从元素哪里开始插入给定的值。如果length不能被转成一个数值，则插入的元素索引为0，包括length不存在时。当length不存在时，将会创建它。<br>唯一的原生类数组(array-like)对象是String,尽管如此，他们并不适用该方法，因为<code>字符串是不可改变</code>的。</p>
+<p>示例：添加元素到数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sports = [<span class="string">"soccer"</span>, <span class="string">"baseball"</span>];</span><br><span class="line"><span class="keyword">var</span> total = sports.push(<span class="string">"football"</span>, <span class="string">"swimming"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sports); </span><br><span class="line"><span class="comment">// ["soccer", "baseball", "football", "swimming"]</span></span><br><span class="line"><span class="built_in">console</span>.log(total); </span><br><span class="line"><span class="comment">// 4</span></span><br></pre></td></tr></table></figure></p>
+<p>示例：合并两个数组<br>使用 apply() 添加第二个数组的所有元素。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vegetables = [<span class="string">"parsnip"</span>,<span class="string">"potato"</span>];</span><br><span class="line"><span class="keyword">var</span> moreVegs = [<span class="string">"celery"</span>,<span class="string">"beetroot"</span>];</span><br><span class="line">vegetables.push(moreVegs);</span><br><span class="line"><span class="built_in">console</span>.log(vegetables);</span><br><span class="line"><span class="comment">// [ 'parsnip', 'potato', [ 'celery', 'beetroot' ] ]</span></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.push.apply(vegetables,moreVegs);</span><br><span class="line"><span class="built_in">console</span>.log(vegetables);</span><br><span class="line"><span class="comment">// ["parsnip","potato","celery","beetroot"]</span></span><br></pre></td></tr></table></figure></p>
+
     </div>
   </div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/17/javascript-splice-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript splice()方法学习小记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
 </article>
 
 
-
-  
-    <article id="post-name" class="article article-type-post" itemscope itemprop="blogPost">
-<div class="article-meta">
-<a href="/2015/10/26/name/" class="article-date">
-  	<time datetime="2015-10-26T08:08:00.000Z" itemprop="datePublished">2015-10-26</time>
-</a>
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="javascript-push-方法学习小记" data-title="javascript push()方法学习小记" data-url="http://www.yuanye097.com/2016/03/17/javascript-push-方法学习小记/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
 </div>
 
-  <div class="article-inner">
-      <input type="hidden" class="isFancy" />
-          <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/26/name/">hexo如何给博客和文章添加keywords的方法</a>
-    </h1>
-  
-
-      </header>
-    <div class="article-entry" itemprop="articleBody">
-        <p>默认情况下博客和文章是没有关键字keywords的，需要手动设置。</p>
-<h5 id="设置博客keywords方法："><a href="#设置博客keywords方法：" class="headerlink" title="设置博客keywords方法："></a>设置博客keywords方法：</h5><p>在博客根目录下找到<strong> _config.yml </strong>文件，在所示地方添加keyword: 关键字1,关键字2,关键字3…，采用英文逗号隔开。如下所示：<br>
-    </div>
-
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/傻屌日妓/">傻屌日妓</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/10/26/name/#more">more >></a>
-        </p>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-    <article id="post-test-hehe" class="article article-type-post" itemscope itemprop="blogPost">
-<div class="article-meta">
-<a href="/2015/10/23/test-hehe/" class="article-date">
-  	<time datetime="2015-10-23T06:34:00.000Z" itemprop="datePublished">2015-10-23</time>
-</a>
-</div>
-
-  <div class="article-inner">
-      <input type="hidden" class="isFancy" />
-          <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/23/test-hehe/">hexo server报错问题解决办法</a>
-    </h1>
-  
-
-      </header>
-    <div class="article-entry" itemprop="articleBody">
-        <p>昨天再跟<a href="http://www.52cik.com/" target="_blank" rel="external">码神</a>请教问题时，他提起了hexo(<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">中文官网</a>)，从他那里老能接触到时代的最新事物，让我倍感兴奋与荣幸，于是开始了自己的hexo之旅。安装步骤这里不介绍了，官网和百度都有，这里只是介绍一下在win下提交到github的hexo deploy命令报错问题（<strong>event.js 141 throw er; // Unhandled ‘error event’</strong>）的解决方法。</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><blockquote>
-<p>在根目录下找到<strong><em>_config.yml</em></strong>文件，编辑器打开此文件找到<br>repo，修改其值为：<a href="https://github账号:github密码@github.com/github用户名/github用户名.github.io.git" target="_blank" rel="external">https://github账号:github密码@github.com/github用户名/github用户名.github.io.git</a><br>，用户名密码要进行encodeURIComponent()编码。保存之后请使用git bash环境下提交hexo deploy即可解决问题。</p>
-</blockquote>
-
-    </div>
-
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-      
-
-            <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
-    </nav>
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -341,8 +266,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
