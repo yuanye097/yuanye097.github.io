@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>为hexo添加GA统计和绶带 | hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="hexo">
-  <meta name="description" content="安装GA统计步骤1.先注册google analysis服务，以获得跟踪ID。 2.获取跟踪JS(管理&amp;amp;gt;媒体资源管理&amp;amp;gt;跟踪信息)即可获得ID和JS代码。 3.打开themes&amp;amp;gt;yil">
+  <title>javascript join()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="Javascript">
+  <meta name="description" content="Array.prototype.join()定义：join() 方法将数组中的所有元素连接成一个字符串。 join()语法：">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,10 +175,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-exo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-join-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
-<a href="/2015/10/27/exo-blog/" class="article-date">
-  	<time datetime="2015-10-27T03:36:00.000Z" itemprop="datePublished">2015-10-27</time>
+<a href="/2016/03/17/javascript-join-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-17T01:59:00.000Z" itemprop="datePublished">2016-03-17</time>
 </a>
 </div>
 
@@ -188,7 +188,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      为hexo添加GA统计和绶带
+      javascript join()方法学习小记
     </h1>
   
 
@@ -197,45 +197,42 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/菜屌日妓/">菜屌日妓</a>
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
 	</div>
 
 
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <h3 id="安装GA统计步骤"><a href="#安装GA统计步骤" class="headerlink" title="安装GA统计步骤"></a>安装GA统计步骤</h3><p>1.先注册google analysis服务，以获得跟踪ID。</p>
-<p>2.获取跟踪JS(管理&gt;媒体资源管理&gt;跟踪信息)即可获得ID和JS代码。</p>
-<p>3.打开themes&gt;yilia&gt;layout&gt;_partial下的google-analytics.ejs，把JS代码粘贴此文件中。<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">'GoogleAnalyticsObject'</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  (i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),</span><br><span class="line">  m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line">  &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//www.google-analytics.com/analytics.js'</span>,<span class="string">'ga'</span>);</span><br><span class="line">  ga(<span class="string">'create'</span>, <span class="string">'your_GAID'</span>, <span class="string">'auto'</span>);</span><br><span class="line">  ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>4.设置google-analytics，打开themes&gt;yilia的_config.yml文件，输入：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  id: your_GAID</span><br><span class="line">  site: auto</span><br></pre></td></tr></table></figure></p>
-<p> 5.hexo g生成静态</p>
-<p> 6.hexo d提交github</p>
-<h3 id="添加绶带步骤"><a href="#添加绶带步骤" class="headerlink" title="添加绶带步骤"></a>添加绶带步骤</h3><p> 把以下代码粘贴到thems&gt;yilia&gt;layout&gt;layout.ejs中。<br> <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"https://github.com/your_name"</span>&gt;&lt;img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
-<p> 生成静态页提交github。</p>
-<p> PS：其他样式请点击<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这里</a>。</p>
-
+        <h3 id="Array-prototype-join"><a href="#Array-prototype-join" class="headerlink" title="Array.prototype.join()"></a>Array.prototype.join()</h3><p>定义：join() 方法将数组中的所有元素连接成一个字符串。</p>
+<p>join()语法：</p>
+<p><code>str = arr.join([separator = &#39;,&#39;])</code></p>
+<p><strong>参数：</strong><br>separator:可选。用于指定链接每个数组元素的分隔符。分隔符会被转成字符串类型；如果省略的话，默认为一个逗号。如果seprator是一个空字符串，那么数组中的所有元素将被直接链接。</p>
+<p><strong>描述：</strong><br>所有的数组元素被转换为字符串，再用一个分隔符将这些字符串连接起来。<br>如果元素是undefined或者null,则会转化为空字符串。</p>
+<p>示例：使用四种不同的分隔符连接数组元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'Wind'</span>, <span class="string">'Rain'</span>, <span class="string">'Fire'</span>];</span><br><span class="line"><span class="keyword">var</span> myVar1 = a.join();      <span class="comment">// "Wind,Rain,Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar2 = a.join(<span class="string">', '</span>);  <span class="comment">// "Wind, Rain, Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar3 = a.join(<span class="string">' + '</span>); <span class="comment">// "Wind + Rain + Fire"</span></span><br><span class="line"><span class="keyword">var</span> myVar4 = a.join(<span class="string">''</span>);    <span class="comment">// "WindRainFire"</span></span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
 <nav id="article-nav">
   
-    <a href="/2015/10/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          hexo向google提交sitemap
+          数据结构与算法JavaScript描述学习笔记（6）
         
       </div>
     </a>
   
   
-    <a href="/2015/10/26/name/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo如何给博客和文章添加keywords的方法</div>
+    <a href="/2016/03/16/javascript-indexOf-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript indexOf()方法学习小记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -246,7 +243,7 @@
 
 <div class="duoshuo">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="exo-blog" data-title="为hexo添加GA统计和绶带" data-url="http://www.yuanye097.com/2015/10/27/exo-blog/"></div>
+  <div class="ds-thread" data-thread-key="javascript-join-方法学习小记" data-title="javascript join()方法学习小记" data-url="http://www.yuanye097.com/2016/03/17/javascript-join-方法学习小记/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script>var duoshuoQuery={short_name:"yuanye097"};</script>
