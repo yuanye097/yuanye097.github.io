@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Archives | hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="Web,HTML,CSS,JavaScript,hexo,前端">
-  <meta name="description" content="热爱web前端技术，2012年接触html/css，2013年接触javascript，至今已4年，仍然是个傻屌一枚，这路走来感谢码神，继续朝着顶端买进！">
+  <title>javascript shift()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="Array.prototype.shift()概述：shift()方法删除数组的第一个元素，并返回这个元">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,201 +175,69 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/30/hexo-blog-2/" class="archive-article-date">
-  	<time datetime="2015-10-30T08:23:00.000Z" itemprop="datePublished">Oct 30</time>
+      <div class="body-wrap"><article id="post-javascript-shift-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/18/javascript-shift-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-18T02:24:00.000Z" itemprop="datePublished">2016-03-18</time>
 </a>
-        </div>
-    	 
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/30/hexo-blog-2/">原生js简易滑动门小记</a>
+    <h1 class="article-title" itemprop="name">
+      javascript shift()方法学习小记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <h3 id="Array-prototype-shift"><a href="#Array-prototype-shift" class="headerlink" title="Array.prototype.shift()"></a>Array.prototype.shift()</h3><p><strong>概述：</strong><br>shift()方法删除数组的第一个元素，并返回这个元素。该方法会改变数组的长度。</p>
+<p><strong>语法：</strong><br>arr.shift()<br><a id="more"></a><br><strong>描述：</strong><br>shift()方法移除索引为0的元素(即第一个元素)，并返回被移除的元素，其他元素的索引值随之减1.如果length属性值为0，则返回undefined。<br>shift()方法并不局限于数组：该方法也可通过call或apply作用于对象上。对于不包含length属性的对象，将添加一个值为0的length属性。</p>
+<p>示例：移除数组中的一个元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'surgeon'</span>];</span><br><span class="line"><span class="keyword">var</span> shifted = myFish.shift(); </span><br><span class="line"><span class="built_in">console</span>.log(myFish); </span><br><span class="line"><span class="comment">// [ 'clown', 'mandarin', 'surgeon' ]</span></span><br><span class="line"><span class="built_in">console</span>.log(shifted); </span><br><span class="line"><span class="comment">// 'angel'</span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
   </div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/18/javascript-pop-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript pop()方法学习小记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/28/hexo-blog-1/" class="archive-article-date">
-  	<time datetime="2015-10-28T08:16:00.000Z" itemprop="datePublished">Oct 28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/28/hexo-blog-1/">hexo同步七牛云方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/七牛云/">七牛云</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/傻屌日妓/">傻屌日妓</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/27/hello-world/" class="archive-article-date">
-  	<time datetime="2015-10-27T07:02:00.000Z" itemprop="datePublished">Oct 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/27/hello-world/">hexo向google提交sitemap</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/菜屌日妓/">菜屌日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/27/exo-blog/" class="archive-article-date">
-  	<time datetime="2015-10-27T03:36:00.000Z" itemprop="datePublished">Oct 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/27/exo-blog/">为hexo添加GA统计和绶带</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/菜屌日妓/">菜屌日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/10/26/name/" class="archive-article-date">
-  	<time datetime="2015-10-26T08:08:00.000Z" itemprop="datePublished">Oct 26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/26/name/">hexo如何给博客和文章添加keywords的方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/傻屌日妓/">傻屌日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/5/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/7/">Next &raquo;</a>
-    </nav>
-  
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="javascript-shift-方法学习小记" data-title="javascript shift()方法学习小记" data-url="http://www.yuanye097.com/2016/03/18/javascript-shift-方法学习小记/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
 
 </div>
       <footer id="footer">
@@ -394,8 +262,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
