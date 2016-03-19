@@ -347,7 +347,7 @@
     <link href="http://www.yuanye097.com/2016/03/17/javascript-join-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
     <id>http://www.yuanye097.com/2016/03/17/javascript-join-方法学习小记/</id>
     <published>2016-03-17T01:59:00.000Z</published>
-    <updated>2016-03-17T06:06:40.000Z</updated>
+    <updated>2016-03-19T02:41:16.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Array-prototype-join&quot;&gt;&lt;a href=&quot;#Array-prototype-join&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.join()&quot;&gt;&lt;/a&gt;Array.prototype.join()&lt;/h3&gt;&lt;p&gt;定义：join() 方法将数组中的所有元素连接成一个字符串。&lt;/p&gt;
 &lt;p&gt;join()语法：&lt;/p&gt;
@@ -367,7 +367,7 @@
       <category term="学习日妓" scheme="http://www.yuanye097.com/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%A6%93/"/>
     
     
-      <category term="Javascript" scheme="http://www.yuanye097.com/tags/Javascript/"/>
+      <category term="javascript" scheme="http://www.yuanye097.com/tags/javascript/"/>
     
   </entry>
   
@@ -376,7 +376,7 @@
     <link href="http://www.yuanye097.com/2016/03/16/javascript-indexOf-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
     <id>http://www.yuanye097.com/2016/03/16/javascript-indexOf-方法学习小记/</id>
     <published>2016-03-16T06:04:00.000Z</published>
-    <updated>2016-03-16T09:48:33.000Z</updated>
+    <updated>2016-03-19T02:41:23.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Array-prototype-indexOf&quot;&gt;&lt;a href=&quot;#Array-prototype-indexOf&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.indexOf()&quot;&gt;&lt;/a&gt;Array.prototype.indexOf()&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;定义：&lt;/strong&gt;indexOf()方法返回指定元素在数组中找到的第一个索引值，否则返回-1。&lt;/p&gt;
 &lt;p&gt;indexOf()语法：&lt;/p&gt;
@@ -408,7 +408,7 @@
       <category term="学习日妓" scheme="http://www.yuanye097.com/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%A6%93/"/>
     
     
-      <category term="JavaScript" scheme="http://www.yuanye097.com/tags/JavaScript/"/>
+      <category term="javascript" scheme="http://www.yuanye097.com/tags/javascript/"/>
     
   </entry>
   
