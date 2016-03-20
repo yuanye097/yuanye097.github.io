@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yuanye097.com/"/>
-  <updated>2016-03-20T14:04:16.000Z</updated>
+  <updated>2016-03-20T15:53:36.000Z</updated>
   <id>http://www.yuanye097.com/</id>
   
   <author>
@@ -14,6 +14,198 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript reduce()方法学习小记</title>
+    <link href="http://www.yuanye097.com/2016/03/20/javascript-reduce-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.yuanye097.com/2016/03/20/javascript-reduce-方法学习小记/</id>
+    <published>2016-03-20T14:50:00.000Z</published>
+    <updated>2016-03-20T15:53:36.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Array-prototype-reduce&quot;&gt;&lt;a href=&quot;#Array-prototype-reduce&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.reduce()&quot;&gt;&lt;/a&gt;Array.prototype.reduce()&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;概述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;reduce()方法接收一个函数作为累加器(accumulator)，数组中的每个值(从做到右)开始缩减，最终成为一个值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;arr.reduce(callback,[initalValue])&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;callback:执行数组中每个值得函数，包含四个参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;previousValue：上一次调用回调返回的值，或者是提供的初始值(initialValue)&lt;/li&gt;
+&lt;li&gt;currentValue：数组中当前被处理的元素&lt;/li&gt;
+&lt;li&gt;index：当前元素在数组中的索引&lt;/li&gt;
+&lt;li&gt;array：调用reduce的数组&lt;br&gt;initialValue：作为第一次调用callback的第一个参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;描述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;reduce()为数组中的每一个元素依次执行回调函数，不包括数组中被删除或从未被赋值的元素，接受四个参数：初始值（或者上一次回调函数的返回值），当前元素值，当前索引，调用reduce的数组。&lt;/p&gt;
+&lt;p&gt;回调函数第一次执行时，previousValue和currentValue可以是一个值，如果initialValue在调用reduce时被提供，那么第一个previousValue等于initialValue，并且currentValue等于数组中的第一个值；如果initialValue未被提供，那么previousValue等于数组中的第一个值，currentValue等于数组中的第二个值。&lt;/p&gt;
+&lt;p&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;].reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;previousValue, currentValue, index, array&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; previousValue + currentValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;回调被执行四次，每次的参数和返回值如下表：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;previousValue&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;currentValue&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;index&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;array&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;return value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第一次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第二次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第三次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第四次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;6&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;reduce的返回值是回调函数最后一次被调用的返回值(10)。&lt;/p&gt;
+&lt;p&gt;如果把初始值作为第二个参数传入 reduce，最终返回值变为20。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;].reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;previousValue, currentValue, index, array&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; previousValue + currentValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;执行步骤：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;previousValue&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;currentValue&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;index&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;array&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;return value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第一次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;10&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第二次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;10&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第三次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;11&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;2&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第四次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;13&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;3&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt; 第五次call&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;16&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;4&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;[0,1,2,3,4]&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;示例：将数组所有项相加&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; len = arr.reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a + b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(arr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [0,1,2,3]原数组为改变&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(len);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;示例：数组扁平化&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; flattened = [[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], [&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;], [&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]].reduce(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a, b&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a.concat(b);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(flattened);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [0, 1, 2, 3, 4, 5]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;兼容旧环境&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Array.prototype.reduce被添加到ECMA-262标准第5版；因此可能在某些实现环境中不被支持。可以将下面的代码插入到脚本开头开允许在那些未能原生支持reduce的实现环境中使用它。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt; !== &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.reduce) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.reduce = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;callback, opt_initialValue&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    &#39;use strict&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; === &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; || &lt;span class=&quot;string&quot;&gt;&#39;undefined&#39;&lt;/span&gt; === &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;TypeError&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;string&quot;&gt;&#39;Array.prototype.reduce called on null or undefined&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;string&quot;&gt;&#39;function&#39;&lt;/span&gt; !== &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; callback) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;TypeError&lt;/span&gt;(callback + &lt;span class=&quot;string&quot;&gt;&#39; is not a function&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; index, value,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        length = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.length &amp;gt;&amp;gt;&amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        isValueSet = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &amp;lt; &lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;.length) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      value = opt_initialValue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      isValueSet = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (index = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; length &amp;gt; index; ++index) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.hasOwnProperty(index)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (isValueSet) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          value = callback(value, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;[index], index, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          value = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;[index];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          isValueSet = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!isValueSet) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;TypeError&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;Reduce of empty array with no initial value&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; value;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Array-prototype-reduce&quot;&gt;&lt;a href=&quot;#Array-prototype-reduce&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.reduce()&quot;&gt;&lt;/a&gt;Array.prototype.reduce()&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;概述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;reduce()方法接收一个函数作为累加器(accumulator)，数组中的每个值(从做到右)开始缩减，最终成为一个值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;arr.reduce(callback,[initalValue])&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习日妓" scheme="http://www.yuanye097.com/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%A6%93/"/>
+    
+    
+      <category term="javascript" scheme="http://www.yuanye097.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript every()方法学习小记</title>
+    <link href="http://www.yuanye097.com/2016/03/20/javascript-every-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.yuanye097.com/2016/03/20/javascript-every-方法学习小记/</id>
+    <published>2016-03-20T14:09:00.000Z</published>
+    <updated>2016-03-20T14:40:49.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Array-prototype-every&quot;&gt;&lt;a href=&quot;#Array-prototype-every&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.every()&quot;&gt;&lt;/a&gt;Array.prototype.every()&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;概述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;every()方法测试数组的所有元素是否都通过了指定函数的测试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;arr.every(callback[, thisArg])&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;callback:用来测试每个元素的函数。&lt;br&gt;thisArg:执行callback时使用的this值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;描述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;every()方法为数组中的每个元素执行一次callback函数，知道它找到一个使callback返回false的值得元素。如果发现了一个这样的元素，every方法将会立即返回false。否则，callback为每一个元素返回true，every就会返回true。&lt;/p&gt;
+&lt;p&gt;callcack只会为那些已经被赋值的索引调用。不会为那些被删除或者从来没被赋值的索引调用。&lt;/p&gt;
+&lt;p&gt;callback被调用时传入三个参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;元素值&lt;/li&gt;
+&lt;li&gt;元素的索引&lt;/li&gt;
+&lt;li&gt;原数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果为every提供一个thisArg参数，在该参数为调用callback时的this值。如果省略该参数，则callback被调用时的this值，在非严格模式下为全局对象，在严格模式下传入undefined。&lt;/p&gt;
+&lt;p&gt;every不会改变原数组。&lt;/p&gt;
+&lt;p&gt;every遍历的元素范围在第一次调用callback之前就已确定了。再调用every之后添加到数组中的元素不会被callback访问到。如果数组中存在的元素被更改，则他们传入callback的值是every访问到他们那一刻的值。那些被删除的元素或从来未被赋值的元素将不会被访问到。&lt;/p&gt;
+&lt;p&gt;示例：检测所有数组元素的大小&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isBigEnough&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;element, index, array&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; element &amp;gt;= &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; samll = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;samll.every(isBigEnough);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; big = [&lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;22&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;33&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;44&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;55&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;big.every(isBigEnough);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(samll.every(isBigEnought));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(samll);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [1,2,4,11,12] 原数组未发生改变&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(big.every(isBigEnought));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(big);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [11,22,33,44,55] 原数组未发生改变&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;兼容旧环境：&lt;br&gt;在第5版时，every被添加进ECAM-262标准；因此在某些实现环境中不被支持。你可以把下面的代码放到脚本的开头来解决此问题，该代码允许在那些没有原生支持every的实现环境中使用它。该算法是ECMA-262第5版中指定的算法，假定Object和TypeError拥有他们的初始值，且fun.call等价于Function.prototype.call。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!&lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.every)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.prototype.every = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;fun &lt;span class=&quot;comment&quot;&gt;/*, thisArg*/&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;		&quot;use strict&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; === &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; || &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt; === &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;TypeError&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; t = &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; len = t.length &amp;gt;&amp;gt;&amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; fun !== &lt;span class=&quot;string&quot;&gt;&quot;function&quot;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;TypeError&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; thisArg = &lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;.length &amp;gt;=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; &amp;gt;&lt;span class=&quot;built_in&quot;&gt;arguments&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] : &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; len; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; t &amp;amp;&amp;amp; !fun.call(thisArg, t[i], i, t)) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Array-prototype-every&quot;&gt;&lt;a href=&quot;#Array-prototype-every&quot; class=&quot;headerlink&quot; title=&quot;Array.prototype.every()&quot;&gt;&lt;/a&gt;Array.prototype.every()&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;概述：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;every()方法测试数组的所有元素是否都通过了指定函数的测试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;arr.every(callback[, thisArg])&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习日妓" scheme="http://www.yuanye097.com/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%A6%93/"/>
+    
+    
+      <category term="javascript" scheme="http://www.yuanye097.com/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>javascript forEach()方法学习小记</title>
@@ -755,389 +947,6 @@
     
     
       <category term="javascript" scheme="http://www.yuanye097.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sublime Text运行js控制台 for mac</title>
-    <link href="http://www.yuanye097.com/2016/03/12/sublime-Text%E8%BF%90%E8%A1%8Cjs-for-Mac/"/>
-    <id>http://www.yuanye097.com/2016/03/12/sublime-Text运行js-for-Mac/</id>
-    <published>2016-03-12T05:35:00.000Z</published>
-    <updated>2016-03-12T09:18:12.000Z</updated>
-    
-    <content type="html">&lt;p&gt;网上有很多教程，这里我说说node方式运行。&lt;br&gt;首先需要安装node，从官网下载即可，终端输入&lt;code&gt;node -v&lt;/code&gt;查看是否安装成功。&lt;br&gt;然后打开&lt;code&gt;sublime Text&lt;/code&gt;，运行&lt;code&gt;Tools&amp;gt;Build System&amp;gt;New Build System&lt;/code&gt;之后会启动一个新窗口&lt;code&gt;untitled.sublime-build&lt;/code&gt;。在此文件中输入：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;path&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;/usr/local/bin/node&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;file_regex&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;working_dir&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;$&amp;#123;project_path:$&amp;#123;folder&amp;#125;&amp;#125;&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;selector&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;source.js&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;shell&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;encoding&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;windows&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;cmd&quot;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&quot;taskkill /F /IM node.exe &amp;gt;nul 2&amp;gt;nul &amp;amp; node&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;$file&quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;linux&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;cmd&quot;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&quot;killall node; node&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;$file&quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;osx&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;cmd&quot;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&quot;killall node &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; //usr/local/bin/node $file&quot;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;“path” 和 “osx的cmd” 输入node路径，如果不知道node路径可以在终端输入&lt;code&gt;which node&lt;/code&gt;查看&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;网上有很多教程，这里我说说node方式运行。&lt;br&gt;首先需要安装node，从官网下载即可，终端输入&lt;code&gt;node -v&lt;/code&gt;查看是否安装成功。&lt;br&gt;然后打开&lt;code&gt;sublime Text&lt;/code&gt;，运行&lt;code&gt;Tools&amp;gt;Build System&amp;gt;New Build System&lt;/code&gt;之后会启动一个新窗口&lt;code&gt;untitled.sublime-build&lt;/code&gt;。在此文件中输入：&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="sublime Text" scheme="http://www.yuanye097.com/tags/sublime-Text/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MarkDown</title>
-    <link href="http://www.yuanye097.com/2016/03/09/markdown/"/>
-    <id>http://www.yuanye097.com/2016/03/09/markdown/</id>
-    <published>2016-03-09T13:22:00.000Z</published>
-    <updated>2016-03-10T07:31:58.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h1&gt;&lt;h2 id=&quot;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot;&gt;&lt;a href=&quot;#MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot; class=&quot;headerlink&quot; title=&quot;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot;&gt;&lt;/a&gt;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&lt;/h2&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;概览&quot;&gt;&lt;a href=&quot;#概览&quot; class=&quot;headerlink&quot; title=&quot;概览&quot;&gt;&lt;/a&gt;概览&lt;/h2&gt;&lt;h3 id=&quot;宗旨&quot;&gt;&lt;a href=&quot;#宗旨&quot; class=&quot;headerlink&quot; title=&quot;宗旨&quot;&gt;&lt;/a&gt;宗旨&lt;/h3&gt;&lt;p&gt;Markdown 的目标是实现「易读易写」。&lt;br&gt;可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 &lt;a href=&quot;http://docutils.sourceforge.net/mirror/setext.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Setext&lt;/a&gt;、&lt;a href=&quot;http://www.aaronsw.com/2002/atx/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;atx&lt;/a&gt;、&lt;a href=&quot;http://textism.com/tools/textile/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Textile&lt;/a&gt;、&lt;a href=&quot;http://docutils.sourceforge.net/rst.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;reStructuredText&lt;/a&gt;、&lt;a href=&quot;http://www.triptico.com/software/grutatxt.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Grutatext&lt;/a&gt; 和 &lt;a href=&quot;http://ettext.taint.org/doc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;EtText&lt;/a&gt;，而最大灵感来源其实是纯文本电子邮件的格式。&lt;/p&gt;
-&lt;h3 id=&quot;兼容HTML&quot;&gt;&lt;a href=&quot;#兼容HTML&quot; class=&quot;headerlink&quot; title=&quot;兼容HTML&quot;&gt;&lt;/a&gt;兼容HTML&lt;/h3&gt;&lt;p&gt;Markdown 语法的目标是：成为一种适用于网络的书写语言。&lt;/p&gt;
-&lt;p&gt;Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。&lt;/p&gt;
-&lt;p&gt;不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。&lt;/p&gt;
-&lt;p&gt;要制约的只有一些 HTML 区块元素――比如 &amp;lt; div&amp;gt;、&amp;lt;  table&amp;gt;、&amp;lt; pre&amp;gt;、&amp;lt; p&amp;gt; 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 &amp;lt; p&amp;gt; 标签。&lt;/p&gt;
-&lt;p&gt;例子如下，在 Markdown 文件里加上一段 HTML 表格：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是一个普通段落。&lt;br&gt;&amp;lt; table&amp;gt;&lt;br&gt;    &amp;lt; tr&amp;gt;&lt;br&gt;        &amp;lt; td&amp;gt;Foo&amp;lt;/ td&amp;gt;&lt;br&gt;    &amp;lt; /tr&amp;gt;&lt;br&gt;&amp;lt; /table&amp;gt;&lt;br&gt;这是另一个普通段落。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;请注意，在 HTML 区块标签间的 Markdown 格式语法将不会被处理。比如，你在 HTML 区块内使用 Markdown 样式的&lt;em&gt;强调&lt;/em&gt;会没有效果。&lt;/p&gt;
-&lt;p&gt;HTML 的区段（行内）标签如 &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;cite&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;del&amp;gt;&lt;/code&gt;可以在 Markdown 的段落、列表或是标题里随意使用。依照个人习惯，甚至可以不用 Markdown 格式，而直接采用 HTML 标签来格式化。举例说明：如果比较喜欢 HTML 的 &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; 或 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签，可以直接使用这些标签，而不用 Markdown 提供的链接或是图像标签语法。&lt;/p&gt;
-&lt;p&gt;和处在 HTML 区块标签间不同，Markdown 语法在 HTML 区段标签间是有效的。&lt;/p&gt;
-&lt;h3 id=&quot;特殊字符自动转换&quot;&gt;&lt;a href=&quot;#特殊字符自动转换&quot; class=&quot;headerlink&quot; title=&quot;特殊字符自动转换&quot;&gt;&lt;/a&gt;特殊字符自动转换&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;在HTML文件中，有两个特殊字符需要特殊处理，&lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;&lt;/code&gt;。&lt;code&gt;&amp;lt;&lt;/code&gt;符号用于起始标签，&lt;code&gt;&amp;amp;&lt;/code&gt;符号则用于标记HTML实体，如果你只是想要显示这些字符的原型，你必须要使用实体的形式，像 &lt;code&gt;&amp;amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;amp;amp;&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;字符尤其让网络文档编写者受折磨，如果你要打&lt;code&gt;「AT&amp;amp;T」&lt;/code&gt;，你必须要写成&lt;code&gt;「AT&amp;amp;amp;T」&lt;/code&gt;。而网址中的&lt;code&gt;&amp;amp;&lt;/code&gt;字符也要转换。比如你要链接到：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;q=larry+bird&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;你必须要把网址转换写为：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;http://images.google.com/images?num=30&amp;amp;amp;q=larry+bird&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;才能放到链接标签的 href 属性里。不用说也知道这很容易忽略，这也可能是 HTML 标准检验所检查到的错误中，数量最多的。&lt;/p&gt;
-&lt;p&gt;Markdown 让你可以自然地书写字符，需要转换的由它来处理好了。如果你使用的&lt;code&gt;&amp;amp;&lt;/code&gt;字符是 HTML 字符实体的一部分，它会保留原状，否则它会被转换成 &lt;code&gt;&amp;amp;amp;&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;所以你如果要在文档中插入一个版权符号©，你可以这样写：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;copy;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Markdown 会保留它不动。而若你写：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;AT&amp;amp;T&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Markdown 就会将它转为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;AT&amp;amp;T&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;类似的状况也会发生在&lt;code&gt;&amp;lt;&lt;/code&gt;符号上，因为 Markdown 允许 兼容 HTML ，如果你是把&lt;code&gt;&amp;lt;&lt;/code&gt;符号作为 HTML 标签的定界符使用，那 Markdown 也不会对它做任何转换，但是如果你写：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;4 &amp;lt; 5&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Markdown 将会把它转换为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;4 &amp;lt; 5&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;不过需要注意的是，code 范围内，不论是行内还是区块，&lt;code&gt;&amp;lt;&lt;/code&gt;和&lt;code&gt;&amp;amp;&lt;/code&gt;两个符号都一定会被转换成 HTML 实体，这项特性让你可以很容易地用 Markdown 写 HTML code （和 HTML 相对而言， HTML 语法中，你要把所有的&lt;code&gt;&amp;lt;&lt;/code&gt;和&lt;code&gt;&amp;amp;&lt;/code&gt;都转换为 HTML 实体，才能在 HTML 文件里面写出 HTML code。）&lt;/p&gt;
-&lt;h2 id=&quot;区块元素&quot;&gt;&lt;a href=&quot;#区块元素&quot; class=&quot;headerlink&quot; title=&quot;区块元素&quot;&gt;&lt;/a&gt;区块元素&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;段落和换行&quot;&gt;&lt;a href=&quot;#段落和换行&quot; class=&quot;headerlink&quot; title=&quot;段落和换行&quot;&gt;&lt;/a&gt;段落和换行&lt;/h3&gt;&lt;p&gt;一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。&lt;/p&gt;
-&lt;p&gt;「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成&lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt;标签。&lt;/p&gt;
-&lt;p&gt;如果你确实想要依赖 Markdown 来插入&lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt;标签的话，在插入处先按入两个以上的空格然后回车。&lt;/p&gt;
-&lt;p&gt;的确，需要多费点事（多加空格）来产生&lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt; ，但是简单地「每个换行都转换为 &lt;code&gt;&amp;lt;br/&amp;gt;&lt;/code&gt;」的方法在 Markdown 中并不适合， Markdown 中 email 式的 区块引用 和多段落的 列表 在使用换行来排版的时候，不但更好用，还更方便阅读。&lt;/p&gt;
-&lt;h3 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h3&gt;&lt;p&gt;Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。&lt;/p&gt;
-&lt;p&gt;类 Setext 形式是用底线的形式，利用 &lt;code&gt;=&lt;/code&gt;（最高阶标题）和 &lt;code&gt;-&lt;/code&gt;（第二阶标题），例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;This is an H1&lt;/code&gt;&lt;br&gt;&lt;code&gt;=============&lt;/code&gt;&lt;br&gt;&lt;code&gt;This is an H2&lt;/code&gt;&lt;br&gt;&lt;code&gt;-------------&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;任何数量的 = 和 - 都可以有效果。&lt;/p&gt;
-&lt;p&gt;类 Atx 形式则是在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶，例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;#&lt;/code&gt;这是&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;code&gt;##&lt;/code&gt;这是&lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;code&gt;######&lt;/code&gt;这是&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上&lt;code&gt;#&lt;/code&gt;，而行尾的&lt;code&gt;#&lt;/code&gt;数量也不用和开头一样（行首的井字符数量决定标题的阶数）：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;#&lt;/code&gt;这是&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;#&lt;br&gt;&lt;br&gt;&lt;code&gt;##&lt;/code&gt;这是&lt;code&gt;&amp;lt;h2&amp;gt;&lt;/code&gt;##&lt;br&gt;&lt;br&gt;&lt;code&gt;###&lt;/code&gt;这是&lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;######&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;区块引用&quot;&gt;&lt;a href=&quot;#区块引用&quot; class=&quot;headerlink&quot; title=&quot;区块引用&quot;&gt;&lt;/a&gt;区块引用&lt;/h3&gt;&lt;p&gt;Markdown 标记区块引用是使用类似 email 中用 &lt;code&gt;&amp;gt;&lt;/code&gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &lt;code&gt;&amp;gt;&lt;/code&gt; ：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落1,&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落2.&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落3.&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落四&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落5.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &amp;gt; ：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落1&lt;br&gt;段落2&lt;br&gt;段落3&lt;br&gt;段落4&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落5&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &amp;gt; ：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落1&lt;br&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;段落1.1&lt;br&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;段落2&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt; &lt;code&gt;##&lt;/code&gt; 这是一个标题。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;这是第一行列表项。&lt;/li&gt;
-&lt;li&gt;这是第二行列表项。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;给出一些例子代码：&lt;br&gt;return shell_exec(“echo $input | $markdown_script”);&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择增加引用阶层。&lt;/p&gt;
-&lt;h3 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h3&gt;&lt;p&gt;Markdown 支持有序列表和无序列表。&lt;br&gt;无序列表使用星号、加号或是减号作为列表标记：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*&lt;/code&gt;Red&lt;br&gt;&lt;code&gt;*&lt;/code&gt;Green&lt;br&gt;&lt;code&gt;*&lt;/code&gt;Blue&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;等同于：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;+&lt;/code&gt;Red&lt;br&gt;&lt;code&gt;+&lt;/code&gt;Green&lt;br&gt;&lt;code&gt;+&lt;/code&gt;Blue&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;也等同于：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;-&lt;/code&gt;Red&lt;br&gt;&lt;code&gt;-&lt;/code&gt;Green&lt;br&gt;&lt;code&gt;-&lt;/code&gt;Blue&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;有序列表则使用数字接着一个英文句点：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;1.&lt;/code&gt;Bird&lt;br&gt;&lt;code&gt;2.&lt;/code&gt;McHale&lt;br&gt;&lt;code&gt;3.&lt;/code&gt;Parish&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;McHale&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;Parish&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/ol&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你的列表标记写成：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;1.&lt;/code&gt;Bird&lt;br&gt;&lt;code&gt;1.&lt;/code&gt;McHale&lt;br&gt;&lt;code&gt;1.&lt;/code&gt;Parish&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;或甚至是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;3.&lt;/code&gt;Bird&lt;br&gt;&lt;code&gt;1.&lt;/code&gt;McHale&lt;br&gt;&lt;code&gt;8.&lt;/code&gt;Parish&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。&lt;/p&gt;
-&lt;p&gt;如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。&lt;/p&gt;
-&lt;p&gt;列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。&lt;/p&gt;
-&lt;p&gt;要让列表看起来更漂亮，你可以把内容用固定的缩进整理好：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*&lt;/code&gt;   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,viverra nec, fringilla in, laoreet vitae, risus.&lt;br&gt;&lt;code&gt;*&lt;/code&gt;   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但是如果你懒，那也行：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*&lt;/code&gt;   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,viverra nec, fringilla in, laoreet vitae, risus.&lt;br&gt;&lt;code&gt;*&lt;/code&gt;   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; 标签包起来，举例来说：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*&lt;/code&gt;Bird&lt;br&gt;&lt;code&gt;*&lt;/code&gt;Magic&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会被转换为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;Bird&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;Magic&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但是这个：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*&lt;/code&gt;Bird&lt;br&gt;&lt;code&gt;*&lt;/code&gt;Magic&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会被转换为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Bird&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;li&amp;gt;&amp;lt;p&amp;gt;Magic&amp;lt;/p&amp;gt;&amp;lt;/li&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/ul&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;This is a list item with two paragraphs. Lorem ipsum dolor&lt;br&gt;sit amet, consectetuer adipiscing elit. Aliquam hendrerit&lt;br&gt;mi posuere lectus.&lt;/p&gt;
-&lt;p&gt;Vestibulum enim wisi, viverra nec, fringilla in, laoreet&lt;br&gt;vitae, risus. Donec sit amet nisl. Aliquam semper ipsum&lt;br&gt;sit amet velit.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Suspendisse id sem consectetuer libero luctus adipiscing.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;This is a list item with two paragraphs.&lt;/p&gt;
-&lt;p&gt;This is the second paragraph in the list item. You’re&lt;br&gt;only required to indent the first line. Lorem ipsum dolor&lt;br&gt;sit amet, consectetuer adipiscing elit.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Another item in the same list.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果要在列表项目内放进引用，那 &amp;gt; 就需要缩进：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;A list item with a blockquote:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is a blockquote&lt;br&gt;inside a list item.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;一列表项包含一个列表区块：&lt;/p&gt;
-&lt;p&gt;   &amp;lt;代码写在这&amp;gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;当然，项目列表很可能会不小心产生，像是下面这样的写法&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;What a great season.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1986&lt;code&gt;\.&lt;/code&gt; What a great season.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;代码区块&quot;&gt;&lt;a href=&quot;#代码区块&quot; class=&quot;headerlink&quot; title=&quot;代码区块&quot;&gt;&lt;/a&gt;代码区块&lt;/h3&gt;&lt;p&gt;和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; 标签来把代码区块包起来。&lt;/p&gt;
-&lt;p&gt;要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;这是一个普通段落：&lt;br&gt;   这是一个代码区块。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Markdown 会转换成：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;这是一个普通段落：&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;这是一个代码区块。&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
-&lt;p&gt;   tell application “Foo”&lt;br&gt;      beep&lt;br&gt;   end tell&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会被转换为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;Here is an example of AppleScript:&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;tell application &amp;quot;Foo&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;beep&lt;/code&gt;&lt;br&gt;&lt;code&gt;end tell&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。&lt;/p&gt;
-&lt;p&gt;在代码区块里面， &lt;code&gt;&amp;amp;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&lt;/code&gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;copy; 2004 Foo Corporation&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会被转换为：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;div class=&amp;quot;footer&amp;quot;&amp;amp;gt;&lt;/code&gt;&lt;br&gt;   &lt;code&gt;&amp;amp;amp;copy; 2004 Foo Corporation&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;amp;lt;/div&amp;amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。&lt;/p&gt;
-&lt;h3 id=&quot;分割线&quot;&gt;&lt;a href=&quot;#分割线&quot; class=&quot;headerlink&quot; title=&quot;分割线&quot;&gt;&lt;/a&gt;分割线&lt;/h3&gt;&lt;p&gt;你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;* *&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;***&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;*****&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;- - -&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;---------------------------------------&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;区段元素&quot;&gt;&lt;a href=&quot;#区段元素&quot; class=&quot;headerlink&quot; title=&quot;区段元素&quot;&gt;&lt;/a&gt;区段元素&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h3&gt;&lt;p&gt;Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。&lt;/p&gt;
-&lt;p&gt;不管是哪一种，链接文字都是用 [方括号] 来标记。&lt;/p&gt;
-&lt;p&gt;要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is &lt;code&gt;[an example](http://example.com/ &amp;quot;Title&amp;quot;)&lt;/code&gt; inline link.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[This link](http://example.net/)&lt;/code&gt; has no title attribute.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会产生：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;This is &amp;lt;a href=&amp;quot;http://example.com/&amp;quot; title=&amp;quot;Title&amp;quot;&amp;gt;an example&amp;lt;/a&amp;gt; inline link.&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;http://example.net/&amp;quot;&amp;gt;This link&amp;lt;/a&amp;gt; has no title attribute.&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你是要链接到同样主机的资源，你可以使用相对路径：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;See my [About](/about/) page for details.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;This is [an example][id] reference-style link.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;你也可以选择性地在两个方括号中间加上一个空格：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;This is [an example] [id] reference-style link.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;接着，在文件的任意处，你可以把这个标记的链接内容定义出来：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;[id]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;链接内容定义的形式为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字&lt;/li&gt;
-&lt;li&gt;接着一个冒号&lt;/li&gt;
-&lt;li&gt;接着一个以上的空格或制表符&lt;/li&gt;
-&lt;li&gt;接着链接的网址&lt;/li&gt;
-&lt;li&gt;选择性地接着 title 内容，可以用单引号、双引号或是括弧包着&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面这三种链接的定义都是相同：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;[foo]: http://example.com/  &amp;quot;Optional Title Here&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;[foo]: http://example.com/  &amp;#39;Optional Title Here&amp;#39;&lt;/code&gt;&lt;br&gt;&lt;code&gt;[foo]: http://example.com/  (Optional Title Here)&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;em&gt;请注意&lt;/em&gt;：有一个已知的问题是 Markdown.pl 1.0.1 会忽略单引号包起来的链接 title。&lt;/p&gt;
-&lt;p&gt;链接网址也可以用方括号包起来：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[id]: &amp;quot;Optional Title Here&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;你也可以把 title 属性放到下一行，也可以加一些缩进，若网址太长的话，这样会比较好看：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[id]: http://example.com/longish/path/to/resource/here
-    &amp;quot;Optional Title Here&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;网址定义只有在产生链接的时候用到，并不会直接出现在文件之中。&lt;/p&gt;
-&lt;p&gt;链接辨别标签可以有字母、数字、空白和标点符号，但是并不区分大小写，因此下面两个链接是一样的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;[link text][a]&lt;/code&gt;&lt;br&gt;&lt;code&gt;[link text][A]&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;隐式链接标记功能让你可以省略指定链接标记，这种情形下，链接标记会视为等同于链接文字，要用隐式链接标记只要在链接文字后面加上一个空的方括号，如果你要让 “Google” 链接到 google.com，你可以简化成：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[Google][]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然后定义链接内容：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[Google]: http://google.com/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;由于链接文字可能包含空白，所以这种简化型的标记内也许包含多个单词：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Visit [Daring Fireball][] for more information.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然后接着定义链接&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[Daring Fireball]: http://daringfireball.net/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;链接的定义可以放在文件中的任何一个地方，我比较偏好直接放在链接出现段落的后面，你也可以把它放在文件最后面，就像是注解一样。&lt;/p&gt;
-&lt;p&gt;下面是一个参考式链接的范例：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I get 10 times more traffic from &lt;code&gt;[Google] [1]&lt;/code&gt; than from&lt;br&gt;&lt;code&gt;[Yahoo] [2]&lt;/code&gt; or &lt;code&gt;[MSN] [3]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt; &lt;code&gt;[1]: http://google.com/        &amp;quot;Google&amp;quot;&lt;/code&gt;&lt;br&gt; &lt;code&gt;[2]: http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;[3]: http://search.msn.com/    &amp;quot;MSN Search&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果改成用链接名称的方式写：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I get 10 times more traffic from &lt;code&gt;[Google][]&lt;/code&gt; than from&lt;br&gt;&lt;code&gt;[Yahoo][]&lt;/code&gt; or &lt;code&gt;[MSN][]&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[google]: http://google.com/        &amp;quot;Google&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;[yahoo]:  http://search.yahoo.com/  &amp;quot;Yahoo Search&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;code&gt;[msn]:    http://search.msn.com/    &amp;quot;MSN Search&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;使用 Markdown 的参考式链接，可以让文件更像是浏览器最后产生的结果，让你可以把一些标记相关的元数据移到段落文字之外，你就可以增加链接而不让文章的阅读感觉被打断。&lt;/p&gt;
-&lt;h3 id=&quot;强调&quot;&gt;&lt;a href=&quot;#强调&quot; class=&quot;headerlink&quot; title=&quot;强调&quot;&gt;&lt;/a&gt;强调&lt;/h3&gt;&lt;p&gt;Markdown 使用星号&lt;code&gt;*&lt;/code&gt;和底线&lt;code&gt;_&lt;/code&gt;作为标记强调字词的符号，被&lt;code&gt;*&lt;/code&gt;或&lt;code&gt;_&lt;/code&gt; 包围的字词会被转成用&lt;code&gt;&amp;lt;em&amp;gt;&lt;/code&gt;标签包围，用两个&lt;code&gt;*&lt;/code&gt;或&lt;code&gt;_&lt;/code&gt;包起来的话，则会被转成&lt;code&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;，例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;*single asterisks*&lt;/code&gt;&lt;br&gt;&lt;code&gt;_single underscores_&lt;/code&gt;&lt;br&gt;&lt;code&gt;**double asterisks**&lt;/code&gt;&lt;br&gt;&lt;code&gt;__double underscores__&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会转成：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;em&amp;gt;single asterisks&amp;lt;/em&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;em&amp;gt;single underscores&amp;lt;/em&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;strong&amp;gt;double asterisks&amp;lt;/strong&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;strong&amp;gt;double underscores&amp;lt;/strong&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;你可以随便用你喜欢的样式，唯一的限制是，你用什么符号开启标签，就要用什么符号结束。&lt;/p&gt;
-&lt;p&gt;强调也可以直接插在文字中间：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;un*frigging*believable&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;但是如果你的 &lt;code&gt;*&lt;/code&gt; 和 &lt;code&gt;_&lt;/code&gt; 两边都有空白的话，它们就只会被当成普通的符号。&lt;/p&gt;
-&lt;p&gt;如果要在文字前后直接插入普通的星号或底线，你可以用反斜线：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;\*this text is surrounded by literal asterisks\*&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;p&gt;如果要标记一小段行内代码，你可以用反引号把它包起来（`），例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;会产生：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;Use the &amp;lt;code&amp;gt;printf()&amp;lt;/code&amp;gt; function.&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;如果要在代码区段内插入反引号，你可以用多个反引号来开启和结束代码区段：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;这段语法会产生：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;There is a literal backtick (`) here.&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;图片&quot;&gt;&lt;a href=&quot;#图片&quot; class=&quot;headerlink&quot; title=&quot;图片&quot;&gt;&lt;/a&gt;图片&lt;/h3&gt;&lt;p&gt;很明显地，要在纯文字应用中设计一个「自然」的语法来插入图片是有一定难度的。&lt;/p&gt;
-&lt;p&gt;Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： 行内式和参考式。&lt;/p&gt;
-&lt;p&gt;行内式的图片语法看起来像是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;![Alt text](/path/to/img.jpg)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;![Alt text](/path/to/img.jpg &amp;quot;Optional title&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;详细叙述如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个惊叹号 !&lt;/li&gt;
-&lt;li&gt;接着一个方括号，里面放上图片的替代文字&lt;/li&gt;
-&lt;li&gt;接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 文字。&lt;/li&gt;
-&lt;li&gt;参考式的图片语法则长得像这样：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;![Alt text][id]&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;[id]: url/to/image  &amp;quot;Optional title attribute&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 标签。&lt;/p&gt;
-&lt;p&gt;此文摘自&lt;a href=&quot;http://www.markdown.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Markdown-易读易写》&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h1&gt;&lt;h2 id=&quot;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot;&gt;&lt;a href=&quot;#MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot; class=&quot;headerlink&quot; title=&quot;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&quot;&gt;&lt;/a&gt;MarkDown是一个WEB上使用的文本到HTML的转换工具，可以通过简单、易读易写的文本格式生成结构化的HTML文档。目前github、stackoverflow等网站均支持这种格式。&lt;/h2&gt;
-    
-    </summary>
-    
-    
-      <category term="markdown" scheme="http://www.yuanye097.com/tags/markdown/"/>
     
   </entry>
   

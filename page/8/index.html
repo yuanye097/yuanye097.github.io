@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Archives | hexo荡漾的web博客|傻屌一枚</title>
+  <title>hexo荡漾的web博客|傻屌一枚</title>
   <meta name="keywords" content="Web,HTML,CSS,JavaScript,hexo,前端">
   <meta name="description" content="热爱web前端技术，2012年接触html/css，2013年接触javascript，至今已4年，仍然是个傻屌一枚，这路走来感谢码神，继续朝着顶端买进！">
   
@@ -177,200 +177,53 @@
 
       <div class="body-wrap">
   
+    <article id="post-test-hehe" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2015/10/23/test-hehe/" class="article-date">
+  	<time datetime="2015-10-23T06:34:00.000Z" itemprop="datePublished">2015-10-23</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
   
-    
-    
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/23/test-hehe/">hexo server报错问题解决办法</a>
+    </h1>
+  
+
+      </header>
+    <div class="article-entry" itemprop="articleBody">
+        <p>昨天再跟<a href="http://www.52cik.com/" target="_blank" rel="external">码神</a>请教问题时，他提起了hexo(<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">中文官网</a>)，从他那里老能接触到时代的最新事物，让我倍感兴奋与荣幸，于是开始了自己的hexo之旅。安装步骤这里不介绍了，官网和百度都有，这里只是介绍一下在win下提交到github的hexo deploy命令报错问题（<strong>event.js 141 throw er; // Unhandled ‘error event’</strong>）的解决方法。</p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><blockquote>
+<p>在根目录下找到<strong><em>_config.yml</em></strong>文件，编辑器打开此文件找到<br>repo，修改其值为：<a href="https://github账号:github密码@github.com/github用户名/github用户名.github.io.git" target="_blank" rel="external">https://github账号:github密码@github.com/github用户名/github用户名.github.io.git</a><br>，用户名密码要进行encodeURIComponent()编码。保存之后请使用git bash环境下提交hexo deploy即可解决问题。</p>
+</blockquote>
+
+    </div>
+
+    <div class="article-info article-info-index">
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+	</div>
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/javascript-concat-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-17T03:14:00.000Z" itemprop="datePublished">Mar 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/javascript-concat-方法学习小记/">javascript concat()方法学习小记</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+            <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" class="archive-article-date">
-  	<time datetime="2016-03-17T02:23:00.000Z" itemprop="datePublished">Mar 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/">数据结构与算法JavaScript描述学习笔记（6）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/javascript-join-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-17T01:59:00.000Z" itemprop="datePublished">Mar 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/javascript-join-方法学习小记/">javascript join()方法学习小记</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/16/javascript-indexOf-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-16T06:04:00.000Z" itemprop="datePublished">Mar 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/javascript-indexOf-方法学习小记/">javascript indexOf()方法学习小记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/16/数据结构与算法JavaScript描述学习笔记（5）/" class="archive-article-date">
-  	<time datetime="2016-03-16T02:23:44.000Z" itemprop="datePublished">Mar 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/数据结构与算法JavaScript描述学习笔记（5）/">数据结构与算法JavaScript描述学习笔记（5）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
     </nav>
   
-
 </div>
       <footer id="footer">
   <div class="outer">
@@ -393,9 +246,9 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
