@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>计时器 | hexo荡漾的web博客|傻屌一枚</title>
+  <title>javascript filter()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
   <meta name="keywords" content="javascript">
-  <meta name="description" content="昨天晚上观看教程视频，了解到了date对象的一些基础用法，然后写了段获取当前时间代码与倒计时代码。这里做个小小笔记。">
+  <meta name="description" content="Array.prototype.filter()概述： filter()方法使用指定的函数测">
   
     <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   
@@ -175,10 +175,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-计时器" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript-filter-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
 <div class="article-meta">
-<a href="/2015/11/20/计时器/" class="article-date">
-  	<time datetime="2015-11-20T06:23:00.000Z" itemprop="datePublished">2015-11-20</time>
+<a href="/2016/03/21/javascript-filter-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-21T07:02:00.000Z" itemprop="datePublished">2016-03-21</time>
 </a>
 </div>
 
@@ -188,7 +188,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      计时器
+      javascript filter()方法学习小记
     </h1>
   
 
@@ -209,26 +209,32 @@
         <div class="clearfix"></div>
       </div>
     <div class="article-entry" itemprop="articleBody">
-        <p>昨天晚上观看教程视频，了解到了date对象的一些基础用法，然后写了段获取当前时间代码与倒计时代码。这里做个小小笔记。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"timeThis"</span>&gt;</span>现在时间是：<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"NCEE"</span>&gt;</span>距离高考倒计时还有：天<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    	<span class="keyword">var</span> timeThis = $(<span class="string">"#timeThis"</span>), NCEE_Text = $(<span class="string">"#NCEE"</span>);</span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">var</span> </span><br><span class="line">    		NowTime = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    		NowYear = NowTime.getFullYear(),</span><br><span class="line">    		NowMonth = NowTime.getMonth()+<span class="number">1</span>,</span><br><span class="line">    		NowDate = NowTime.getDate(),</span><br><span class="line">    		NowDay = NowTime.getDay(),</span><br><span class="line">    		XQday = [<span class="string">"星期日"</span>,<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>,<span class="string">"星期四"</span>,<span class="string">"星期五"</span>,<span class="string">"星期六"</span>],</span><br><span class="line">    		NowHour = NowTime.getHours(),</span><br><span class="line">    		NowMinutes = NowTime.getMinutes(),</span><br><span class="line">    		NowSeconds = NowTime.getSeconds();</span><br><span class="line">    		<span class="function"><span class="keyword">function</span> <span class="title">checkTime</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">				<span class="keyword">return</span> i = ( i &lt; <span class="number">10</span>) ? <span class="string">"0"</span> + i : i;</span><br><span class="line">			&#125;;</span><br><span class="line">    		timeThis.html(<span class="string">"现在时间是："</span>+NowYear + <span class="string">"年"</span>+ NowMonth + <span class="string">"月"</span> +  NowDate + <span class="string">"日"</span> +XQday[NowDay] + NowHour + <span class="string">":"</span> + checkTime(NowMinutes) + <span class="string">":"</span> +checkTime(NowSeconds));</span><br><span class="line">    	&#125;;</span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">Countdown</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    		<span class="keyword">var</span> NowTime = <span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">    			futureTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2016,6,6"</span>),</span><br><span class="line">    			Time_difference = (futureTime.getTime() - NowTime.getTime()) / <span class="number">1000</span>,</span><br><span class="line">    			<span class="comment">//1天 ＝ 24小时 1小时 ＝ 60分 1分钟 ＝ 60秒 1秒 ＝ 1000毫秒</span></span><br><span class="line">    			diff_Day = Time_difference / (<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>) | <span class="number">0</span>,</span><br><span class="line">    			diff_hours = (Time_difference / (<span class="number">60</span> * <span class="number">60</span>)) % <span class="number">24</span> | <span class="number">0</span>,</span><br><span class="line">    			diff_m = (Time_difference / <span class="number">60</span>) % <span class="number">60</span> | <span class="number">0</span>,</span><br><span class="line">    			diff_s = Time_difference % <span class="number">60</span> | <span class="number">0</span>;</span><br><span class="line">    		NCEE_Text.html(<span class="string">"距离高考倒计时还有："</span>+ diff_Day +<span class="string">"天"</span> + diff_hours + <span class="string">"小时"</span> + diff_m + <span class="string">"分钟"</span> + diff_s + <span class="string">"秒"</span>);</span><br><span class="line">    	&#125;;</span><br><span class="line">    	setInterval(showTime,<span class="number">1000</span>);</span><br><span class="line">    	setInterval(Countdown,<span class="number">1000</span>);</span><br><span class="line">    <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+        <h3 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h3><p><strong>概述：</strong></p>
+<p>filter()方法使用指定的函数测试所有元素，并创建一个包含所有通过测试的元素的新数组。</p>
+<p><strong>语法：</strong><br><code>arr.filter(callback[, thisArg])</code><br><a id="more"></a><br><strong>参数：</strong><br>callback:用来测试数组的每个元素的函数。调用时使用参数(element, index, array);<br>返回true表示保留该元素(通过测试)，false则移除。<br>thisArg:可选。执行callcack时的用于this的值。</p>
+<p><strong>描述：</strong></p>
+<p>filter为数组中的每个元素调用一次callback函数， 并利用所有使得callback返回true或等价于true的值的元素创建一个新数组。callback只会在已经复制的索引上被调用，对于那些已经被删除或者从未被赋值的索引不会被调用。那些没有通过callback测试的元素会被跳过，那不会被包含在新数组中。</p>
+<p>callback被调用时传入三个参数：</p>
+<ul>
+<li>元素的值</li>
+<li>元素的索引</li>
+<li>被遍历的数组</li>
+</ul>
+<p>如果为filter提供一个thisArg参数，则它会被作为callback被调用时的this值。否则，callback的this值在非严格模式下将是全局对象，严格模式下为undefined。</p>
+<p>如果为 filter 提供一个 thisArg 参数，则它会被作为 callback 被调用时的 this 值。否则，callback 的 this 值在非严格模式下将是全局对象，严格模式下为 undefined。<br>filter不会改变原数组。<br>filter遍历的元素范围在第一次调用callback之前就已经确定了。<br>在调用filter之后被添加到数组中的元素不会被filter遍历到。如果已经存在的元素被改变了，则他们传入callback的值是filter遍历到它们那一刻的值。被删除或从未被赋值的元素不会被遍历到。</p>
+<p>示例：筛选排除掉所有的小值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> element &gt;= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">3</span>,<span class="number">44</span>];</span><br><span class="line"><span class="keyword">var</span> filtered = arr.filter(isBigEnough);</span><br><span class="line"><span class="built_in">console</span>.log(filtered);</span><br><span class="line"><span class="comment">//[22, 33, 44]</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>兼容旧环境</strong></p>
+<p>filter被添加到ECMA-262标准第5版中，因此在某些实现环境中不被支持。可以把下面的代码插入到脚本的开头开解决问题，该代码允许在那些没有原生支持filter的实现环境中使用它。该算法是ECMA-262第5版中指定的算法，假定fn.call等价于Function.prototype.call的初始值，且Array.prototype.push拥有它的初始值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.filter) &#123;</span><br><span class="line">	<span class="built_in">Array</span>.prototype.filter = <span class="function"><span class="keyword">function</span>(<span class="params">fun<span class="comment">/*, thisArg*/</span></span>)</span>&#123;</span><br><span class="line"><span class="meta">		"use strict"</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span> === <span class="keyword">void</span> <span class="number">0</span> || <span class="keyword">this</span> === <span class="literal">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">		<span class="keyword">var</span> t = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">		<span class="keyword">var</span> len = t.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> fun !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">		<span class="keyword">var</span> res = [];</span><br><span class="line">		<span class="keyword">var</span> thisArg = <span class="built_in">arguments</span>.length &gt;= <span class="number">2</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>] : <span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span> (i <span class="keyword">in</span> t) &#123;</span><br><span class="line">				<span class="keyword">var</span> val = t[i];</span><br><span class="line">				<span class="keyword">if</span> (fun.call(thisArg,val,i,t)) &#123;</span><br><span class="line">					res.push(val);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
   </div>
   
 <nav id="article-nav">
   
-    <a href="/2015/11/20/仿必应网搜索/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          仿必应网搜索
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/16/sass制作简易侧边框/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">sass制作简易侧边框</div>
+    <a href="/2016/03/21/javascript-map-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript map()方法学习小记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -239,7 +245,7 @@
 
 <div class="duoshuo">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="计时器" data-title="计时器" data-url="http://www.yuanye097.com/2015/11/20/计时器/"></div>
+  <div class="ds-thread" data-thread-key="javascript-filter-方法学习小记" data-title="javascript filter()方法学习小记" data-url="http://www.yuanye097.com/2016/03/21/javascript-filter-方法学习小记/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script>var duoshuoQuery={short_name:"yuanye097"};</script>

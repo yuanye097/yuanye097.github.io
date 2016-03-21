@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>javascript map()方法学习小记 | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="Array.prototype.map()概述： map()方法返回一个由原数组中的每个元素调用一个指定方法后">
+  
+    <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/lufy.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">荡漾</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为码神一样的技术达人</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.52cik.com/">码神</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">热爱web前端，努力成为像码神一样的技术达人！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">荡漾</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/lufy.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">荡漾</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">成为码神一样的技术达人</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-javascript-map-方法学习小记" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/21/javascript-map-方法学习小记/" class="article-date">
+  	<time datetime="2016-03-21T03:27:00.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript map()方法学习小记
+    </h1>
+  
+
+      </header>
+
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <h3 id="Array-prototype-map"><a href="#Array-prototype-map" class="headerlink" title="Array.prototype.map()"></a>Array.prototype.map()</h3><p><strong>概述：</strong></p>
+<p>map()方法返回一个由原数组中的每个元素调用一个指定方法后的返回值组成新的数组。</p>
+<p><strong>语法：</strong></p>
+<p><code>array.map(callback[, thisArg])</code><br><a id="more"></a><br><strong>参数：</strong></p>
+<p>callback：原数组中的元素经过该方法后返回一个新的元素。接收4个参数：</p>
+<ul>
+<li>currentValue：数组中当前被传递的元素。</li>
+<li>index：数组中当前被传递的元素的索引。</li>
+<li>array：调用map方法的数组。</li>
+</ul>
+<p>thisArg：执行callback函数时this指向的对象。</p>
+<p><strong>描述：</strong></p>
+<p>map方法会给原数组中的每个元素都按顺序调用一次callback函数。<br>callback每次执行后的返回值组合起来形成一个新数组。callback函数只会在有值得索引上被调用；那些从来没被赋过值或者使用delete删除的索引则不会被调用。</p>
+<p>callback函数会自动传入三个参数：数组元素，元素索引，原数组本身。<br>如果thisArg参数有值，则每次callback函数被调用的时候，this都会指向thisArg参数上的这个对象。如果省略了thisArg参数，或者赋值为null或undefined，则this指向全局对象。</p>
+<p>map不修改调用它的原数组本身（当然可以在callback执行时改变原数组）。</p>
+<p>使用map方法处理数组时，数组元素的范围是在callback方法第一次调用之前就已经确定了。在map方法执行的过程中：原数组中新增加的元素都将不会被callback访问到；若已经存在的元素被改变或删除了，则它们的传递到callback的值是map方法遍历到它们的那一时刻的值；而被删除的元素将不会被访问到。</p>
+<p>示例：将数组中的单词转换成对应的复数形式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fuzzPlural</span>(<span class="params">single</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = single.replace(<span class="regexp">/o/g</span>,<span class="string">"e"</span>);</span><br><span class="line">  <span class="keyword">if</span>(single === <span class="string">"kangaroo"</span>)&#123;</span><br><span class="line">    result += <span class="string">"se"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"foot"</span>, <span class="string">"goose"</span>, <span class="string">"moose"</span>, <span class="string">"kangaroo"</span>];</span><br><span class="line"><span class="keyword">var</span> wordsMap = words.map(fuzzPlural);</span><br><span class="line"><span class="built_in">console</span>.log(wordsMap);</span><br><span class="line"><span class="comment">// ["feet", "geese", "meese", "kangareese"]</span></span><br></pre></td></tr></table></figure></p>
+<p>示例：求数组中每个元素的平方根<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers =[<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> roots = numbers.map(<span class="built_in">Math</span>.sqrt);</span><br><span class="line"><span class="built_in">console</span>.log(roots);</span><br><span class="line"><span class="comment">// [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>例子：在字符串上使用 map 方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> map = <span class="built_in">Array</span>.prototype.map;</span><br><span class="line"><span class="keyword">var</span> a = map.call(<span class="string">"Hellor World"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;<span class="keyword">return</span> x.charCodeAt(<span class="number">0</span>);&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">// [ 72, 101, 108, 108, 111, 114, 32, 87, 111, 114, 108, 100 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>使用技巧案例：<br>通常情况下，map方法中的challback函数只需要接收一个参数，就是正在被遍历的数组元素本身。但这并不意味着map只给callback传了一个参数。这个思维惯性可能会让我们犯一个很容易犯的错误。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面的语句返回什么呢:</span></span><br><span class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].map(<span class="built_in">parseInt</span>);</span><br><span class="line"><span class="comment">// 你可能觉的会是[1, 2, 3]</span></span><br><span class="line"><span class="comment">// 但实际的结果是 [1, NaN, NaN]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 通常使用parseInt时,只需要传递一个参数.但实际上,parseInt可以有两个参数.第二个参数是进制数.可以通过语句"alert(parseInt.length)===2"来验证.</span></span><br><span class="line"><span class="comment">// map方法在调用callback函数时,会给它传递三个参数:当前正在遍历的元素, 元素索引, 原数组本身.</span></span><br><span class="line"><span class="comment">// 第三个参数parseInt会忽视, 但第二个参数不会,也就是说,parseInt把传过来的索引值当成进制数来使用.从而返回了NaN.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">//应该使用如下的用户函数returnInt</span><br><span class="line"></span><br><span class="line">function returnInt(element)&#123;</span><br><span class="line">  return parseInt(element,10);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">["1", "2", "3"].map(returnInt);</span><br><span class="line">// 返回[1,2,3]</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>兼容旧环境</strong></p>
+<p>map是在最近的ECMA-262标准中新添加的方法；所以一些旧版本的浏览器可能没有实现该方法。在那些没有原生支持map方法的浏览器中，可以使用下面的javascript代码来实现它。所使用的算法是ECMA-262第5版规定的。假定Object,TypeError,和Array有他们的原始值。而且callback.call的原始值也是Function.prototype.call。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.map)&#123;</span><br><span class="line">	<span class="built_in">Array</span>.prototype.map = <span class="function"><span class="keyword">function</span>(<span class="params">callback, thisArg</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> T,A,k;</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span> == <span class="literal">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"this is null or not defined"</span>);</span><br><span class="line">		<span class="comment">//将O赋值为调用map方法的数组</span></span><br><span class="line">		<span class="keyword">var</span> O = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">		<span class="comment">//将len赋值为数组O的长度</span></span><br><span class="line">		<span class="keyword">var</span> len = O.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">		<span class="comment">//如果callback不是函数，则抛出TypeError异常。</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(callback) != <span class="string">"[object Function]"</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(callback + <span class="string">" is not a function"</span>);</span><br><span class="line">		<span class="comment">//如果参数thisArg有值，则将T赋值为thisArg；否则T为undefined。</span></span><br><span class="line">		<span class="keyword">if</span> (thisArg) T = thisArg;</span><br><span class="line">		<span class="comment">//创建新数组A，长度为原数组O长度len</span></span><br><span class="line">		A = <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line">		<span class="comment">//将K赋值为0</span></span><br><span class="line">		k = <span class="number">0</span>；</span><br><span class="line">		<span class="comment">//当k &lt; len时，执行循环</span></span><br><span class="line">		<span class="keyword">while</span>(k &lt; len)&#123;</span><br><span class="line">			<span class="keyword">var</span> kValue,mappedValue;</span><br><span class="line">			<span class="comment">//遍历O,k为原数组索引</span></span><br><span class="line">			<span class="keyword">if</span> (k <span class="keyword">in</span> O) &#123;</span><br><span class="line">				<span class="comment">//kValue为索引k对应的值</span></span><br><span class="line">				kValue = O[k];</span><br><span class="line">				<span class="comment">//执行callback，this指向T，参数有三个。分别是kValue：值，K：索引，O：原数组。</span></span><br><span class="line">				mappedValue = callback.call(T, kValue,k,O);</span><br><span class="line">				<span class="comment">//返回值添加到新数组中</span></span><br><span class="line">				A[k] = mappedValue;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// k自增1</span></span><br><span class="line">			k++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//返回新数组A</span></span><br><span class="line">		<span class="keyword">return</span> A;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/21/javascript-filter-方法学习小记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript filter()方法学习小记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/21/javascript-reduceRight-方法学习小记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript reduceRight()方法学习小记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="javascript-map-方法学习小记" data-title="javascript map()方法学习小记" data-url="http://www.yuanye097.com/2016/03/21/javascript-map-方法学习小记/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 荡漾
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60686330-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1994efadc3f3d033974da07965940a2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
