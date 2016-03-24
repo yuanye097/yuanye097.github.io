@@ -9,7 +9,7 @@ require([], function (){
 	}
 	var isPCInit = false;
 	var loadPC = function(){
-		require([qiniu + '/js/pc.js'], function(pc){
+		require([qiniu + 'yuanye/js/pc.js'], function(pc){
 			pc.init();
 			isPCInit = true;
 		});
