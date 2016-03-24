@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Archives: 2016/3 | hexo荡漾的web博客|傻屌一枚</title>
-  <meta name="keywords" content="Web,HTML,CSS,JavaScript,hexo,前端">
-  <meta name="description" content="热爱web前端技术，2012年接触html/css，2013年接触javascript，至今已4年，仍然是个傻屌一枚，这路走来感谢码神，继续朝着顶端买进！">
+  <title>数据结构与算法javascript描述学习笔记（9） | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="今天上午把此书的第二章数组的基础用法学习完了，现在开始学习下第三章的内容–列表。 第三章 列表在日常生活中，人们经常使用列表：代办事项列表、购物清单、十佳榜单、最后十名榜单等。计算机程序也在使用列表，尤其是列表中保存的元素不是">
   <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
   <link rel="icon" href="/assets-cdn.github.com/favicon.ico">
   <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/css/style.css">
@@ -173,201 +173,74 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/javascript-concat-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-17T03:14:00.000Z" itemprop="datePublished">Mar 17</time>
+      <div class="body-wrap"><article id="post-数据结构与算法javascript描述学习笔记（9）" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/22/数据结构与算法javascript描述学习笔记（9）/" class="article-date">
+  	<time datetime="2016-03-22T13:52:00.000Z" itemprop="datePublished">2016-03-22</time>
 </a>
-        </div>
-    	 
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/javascript-concat-方法学习小记/">javascript concat()方法学习小记</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法javascript描述学习笔记（9）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <p>今天上午把此书的第二章数组的基础用法学习完了，现在开始学习下第三章的内容–列表。</p>
+<h3 id="第三章-列表"><a href="#第三章-列表" class="headerlink" title="第三章 列表"></a>第三章 列表</h3><p>在日常生活中，人们经常使用列表：代办事项列表、购物清单、十佳榜单、最后十名榜单等。计算机程序也在使用列表，尤其是列表中保存的元素不是太多时。当不需要在一个很长的序列中查找元素，或者对其进行排列时，列表显得尤为有用。反之，如果数据结构非常复杂，列表的作用就没有那么大了。本章展示了如何创建一个简单的列表类。首先给出列表的抽象数据类型定义，然后描述如何实现该抽象数据类型(ADT)。最后，分析几个列表适合解决的实际问题。<br><a id="more"></a></p>
+<h4 id="3-1-列表的抽象数据类型定义"><a href="#3-1-列表的抽象数据类型定义" class="headerlink" title="3.1 列表的抽象数据类型定义"></a>3.1 列表的抽象数据类型定义</h4><p>为了设计列表的抽象数据类型，需要给出列表的定义，包括列表应该拥有哪些属性，应该在列表上执行哪些操作。</p>
+<p>列表是一组有序的数据。每个列表中的数据项称为元素。在JavaScript中，列表中的元素可以是任意数据类型。列表中可以保存多少元素并没有事先限定。实际使用时元素的数量受到程序内存的限制。</p>
+<p>不包含任何元素的列表成为空列表。列表中包含元素的个数成为列表的length。在内部实现上，用一个变量listSize保存列表中元素的个数。可以在列表末尾append一个元素，也可以在一个给定元素后或列表的起始位置insert一个元素。使用remove方法从列表中删除元素，使用clear方法清空列表中所有元素。</p>
+<p>还可以使用toString()方法显示列表中所有的元素，使用getElement()方法显示当前元素。</p>
+<p>列表有用描述元素位置的属性。列表有前有后(分别对应front和end)。使用next()方法可以从当前元素移动到下一个元素，使用prev()方法可以移动到当前元素的前一个元素。还可以使用moveTo(n)方法直接移动到指定位置，这里的n表示要移动到第n个位置。currPos属性表示列表中的当前位置。</p>
+<p>列表的抽象数据类型并未知名列表的存储结构，在本章的实现中，我们使用一个数组dataStore来存储元素。</p>
+
+    </div>
   </div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/22/数据结构与算法javascript描述学习笔记（8）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法javascript描述学习笔记（8）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/" class="archive-article-date">
-  	<time datetime="2016-03-17T02:23:00.000Z" itemprop="datePublished">Mar 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/">数据结构与算法JavaScript描述学习笔记（6）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/17/javascript-join-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-17T01:59:00.000Z" itemprop="datePublished">Mar 17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/17/javascript-join-方法学习小记/">javascript join()方法学习小记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/16/javascript-indexOf-方法学习小记/" class="archive-article-date">
-  	<time datetime="2016-03-16T06:04:00.000Z" itemprop="datePublished">Mar 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/javascript-indexOf-方法学习小记/">javascript indexOf()方法学习小记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/16/数据结构与算法JavaScript描述学习笔记（5）/" class="archive-article-date">
-  	<time datetime="2016-03-16T02:23:44.000Z" itemprop="datePublished">Mar 16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/16/数据结构与算法JavaScript描述学习笔记（5）/">数据结构与算法JavaScript描述学习笔记（5）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2016/03/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2016/03/">1</a><a class="page-number" href="/archives/2016/03/page/2/">2</a><a class="page-number" href="/archives/2016/03/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2016/03/page/5/">5</a><a class="page-number" href="/archives/2016/03/page/6/">6</a><a class="extend next" rel="next" href="/archives/2016/03/page/5/">Next &raquo;</a>
-    </nav>
-  
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="数据结构与算法javascript描述学习笔记（9）" data-title="数据结构与算法javascript描述学习笔记（9）" data-url="http://www.yuanye097.com/2016/03/22/数据结构与算法javascript描述学习笔记（9）/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
 
 </div>
       <footer id="footer">
@@ -392,8 +265,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
