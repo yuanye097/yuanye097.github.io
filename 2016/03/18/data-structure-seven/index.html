@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>数据结构与算法javascript描述学习笔记（7） | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="今天上午把上一篇笔记涉及到的一些方法的基础知识写了一遍，本想下午继续往下学新的知识点，可没想到开了个大会，一开就是5个小时，走出会议室都快晕厥的节奏，休息了会儿下班了，一个下午时间就这么耽误了，现在是夜晚11点，学习的脚步不能停下，对javascript的狂热不能终止！言归正传！！  第七天(23：00)">
+  <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
+  <link rel="icon" href="/assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/css/style.css">
+  <script>var qiniu='http://7xnv26.com1.z0.glb.clouddn.com/';</script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">荡漾</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为码神一样的技术达人</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.52cik.com/">码神</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">热爱web前端，努力成为像码神一样的技术达人！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">荡漾</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">荡漾</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">成为码神一样的技术达人</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-data-structure-seven" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/18/data-structure-seven/" class="article-date">
+  	<time datetime="2016-03-18T14:35:00.000Z" itemprop="datePublished">2016-03-18</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法javascript描述学习笔记（7）
+    </h1>
+  
+
+      </header>
+
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <p>今天上午把上一篇笔记涉及到的一些方法的基础知识写了一遍，本想下午继续往下学新的知识点，可没想到开了个大会，一开就是5个小时，走出会议室都快晕厥的节奏，休息了会儿下班了，一个下午时间就这么耽误了，现在是夜晚11点，学习的脚步不能停下，对javascript的狂热不能终止！<br>言归正传！！</p>
+<ul>
+<li>第七天(23：00)<a id="more"></a>
+<h3 id="2-7-迭代器方法"><a href="#2-7-迭代器方法" class="headerlink" title="2.7 迭代器方法"></a>2.7 迭代器方法</h3>迭代器方法对数组中的每个元素应用一个函数，可以返回一个值、一组值或者一个新数组。</li>
+</ul>
+<h4 id="2-7-1-不生成新数组的迭代器方法"><a href="#2-7-1-不生成新数组的迭代器方法" class="headerlink" title="2.7.1 不生成新数组的迭代器方法"></a>2.7.1 不生成新数组的迭代器方法</h4><p>第一组迭代器方法不产生任何新数组，相反，要么对于数组中的每个元素执行某种操作，要么返回一个值。<br>第一种方法是forEach()，该方法接受一个函数作为参数，对数组中的每个元素使用该函数。</p>
+<p>例 2.7.1.1 forEach()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(num,num * num);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line">nums.forEach(square);</span><br><span class="line"><span class="comment">/*</span><br><span class="line">1 1</span><br><span class="line">2 4</span><br><span class="line">3 9</span><br><span class="line">4 16</span><br><span class="line">5 25</span><br><span class="line">6 36</span><br><span class="line">7 49</span><br><span class="line">8 64</span><br><span class="line">9 81</span><br><span class="line">10 100</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<p>另一种迭代器方法是every()，该方法接受一个返回值为布尔类型的函数，对数组中的每个元素使用该函数。如果对于所有的元素，该函数均返回true，则该方法返回true。</p>
+<p>例 2.7.1.2 every()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> nums = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>];</span><br><span class="line"><span class="keyword">var</span> even = nums.every(isEven);</span><br><span class="line"><span class="keyword">if</span>(even)&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"所有数字都是偶数"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"不是所有数字都是偶数"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 所有数字都是偶数</span></span><br></pre></td></tr></table></figure></p>
+<p>reduce()方法接受一个函数，返回一个值。该方法会从一个累加值开始，不断对累加值和数组中的后续元素调用该函数，直到数组中的最后一个元素，最后返回得到的累加值。</p>
+<p>例 2.7.1.3 reduce()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">arr1,arr2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> arr1 + arr2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</span><br><span class="line"><span class="keyword">var</span> sum = nums.reduce(add);</span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 55</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 执行过程 */</span></span><br><span class="line"><span class="comment">/*</span><br><span class="line">add(1,2) =&gt; 3</span><br><span class="line">add(3,3) =&gt; 6</span><br><span class="line">add(6,4) =&gt; 10</span><br><span class="line">add(10,5) =&gt; 15</span><br><span class="line">add(15,6) =&gt; 21</span><br><span class="line">add(21,7) =&gt; 28</span><br><span class="line">add(28,8) =&gt; 36</span><br><span class="line">add(36,9) =&gt; 45</span><br><span class="line">add(45,10) =&gt; 55</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+<p>例 2.7.1.4 用reduce()将数组中的字符串链接起来<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cocat</span>(<span class="params">str1,str2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str1 + str2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"the "</span>, <span class="string">"quick "</span>,<span class="string">"brown "</span>, <span class="string">"fox "</span>];</span><br><span class="line"><span class="keyword">var</span> strs = words.reduce(cocat);</span><br><span class="line"><span class="built_in">console</span>.log(strs);</span><br><span class="line"><span class="comment">// "the quick brown fox "</span></span><br></pre></td></tr></table></figure></p>
+<p>javascript还提供了reduceRight()方法，和reduce()方法不同，它是从右到左执行。<br>例 2.7.1.5 reduceRight()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">concat</span>(<span class="params">str1,str2</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str1+str2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"the "</span>, <span class="string">"quick "</span>,<span class="string">"brown "</span>, <span class="string">"fox "</span>];</span><br><span class="line"><span class="keyword">var</span> strs = words.reduceRight(concat);</span><br><span class="line"><span class="built_in">console</span>.log(strs);</span><br><span class="line"><span class="comment">// "fox brown quick the"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="2-7-2-生成新数组的迭代器方法"><a href="#2-7-2-生成新数组的迭代器方法" class="headerlink" title="2.7.2 生成新数组的迭代器方法"></a>2.7.2 生成新数组的迭代器方法</h4><p>有两个迭代器方法可以产生新数组：map() 和 filter()。map()和forEach()有点儿像，对数组中的每个元素使用某个函数。两者区别是map()返回一个新数组，该数组的元素是对原有元素应用某个函数得到的结果。<br>例 2.7.2.1 对数字使用map()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curve</span>(<span class="params">grade</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> grade += <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> grades = [<span class="number">77</span>, <span class="number">65</span>, <span class="number">81</span>, <span class="number">92</span>, <span class="number">83</span>];</span><br><span class="line"><span class="keyword">var</span> newGrades = grades.map(curve);</span><br><span class="line"><span class="built_in">console</span>.log(grades);</span><br><span class="line"><span class="comment">// [ 77, 65, 81, 92, 83 ] 原数组未改变</span></span><br><span class="line"><span class="built_in">console</span>.log(newGrades);</span><br><span class="line"><span class="comment">// [ 82, 70, 86, 97, 88 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>例 2.7.2.2 对字符串使用map()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">first</span>(<span class="params">word</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> word[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"for"</span>,<span class="string">"your"</span>,<span class="string">"information"</span>];</span><br><span class="line"><span class="keyword">var</span> acronym = words.map(first).join(<span class="string">""</span>);</span><br><span class="line"><span class="built_in">console</span>.log(acronym); <span class="comment">// "fyi"</span></span><br></pre></td></tr></table></figure></p>
+<p>数组acronym保存了数组words中每个元素的第一个字母，然而，如果想将数组显示为真正的缩略形式，必须想办法除掉连接每个数组元素的逗号，如果直接调用toString()方法，就会显示出这个逗号。使用join()方法，为其传入一个空字符串作为参数，可以解决这个问题。</p>
+<p>filter()和every()类似，传入一个返回值为布尔类型的函数。和every()方法不同的是，当对数组中的所有元素应用该函数，结果均为true时，该方法并不返回true，而是返回一个新数组，该数组包含应用该函数后结果为true的元素。</p>
+<p>例 2.7.2.3 filter()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num % <span class="number">2</span> != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> nums = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ;i &lt; <span class="number">20</span>; i++)&#123;</span><br><span class="line">	nums[i] = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> evens = nums.filter(isEven);</span><br><span class="line"><span class="built_in">console</span>.log(evens);</span><br><span class="line"><span class="comment">// [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]</span></span><br><span class="line"><span class="keyword">var</span> odds = nums.filter(isOdd);</span><br><span class="line"><span class="built_in">console</span>.log(odds);</span><br><span class="line"><span class="comment">// [ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>例 2.7.2.4 filter()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">passing</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num &gt;= <span class="number">60</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> grades = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">20</span>; i++)&#123;</span><br><span class="line">	grades[i] = <span class="built_in">Math</span>.random() * <span class="number">101</span> | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> passGrades = grades.filter(passing);</span><br><span class="line"><span class="built_in">console</span>.log(grades);</span><br><span class="line"><span class="comment">// [ 97, 52, 21, 68, 34, 1, 92, 16, 26, 68, 50, 3, 85, 51, 41, 12, 67, 80, 65, 68 ]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(passGrades);</span><br><span class="line"><span class="comment">// [ 97, 68, 92, 68, 85, 67, 80, 65, 68 ]</span></span><br></pre></td></tr></table></figure></p>
+<p>例 2.7.2.5 使用 filter() 方法过滤字符串数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">afterc</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(str.indexOf(<span class="string">"cie"</span>) &gt; <span class="number">-1</span>)&#123;</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> words = [<span class="string">"recieve"</span>,<span class="string">"deceive"</span>,<span class="string">"percieve"</span>,<span class="string">"deceit"</span>,<span class="string">"concieve"</span>]; <span class="keyword">var</span> misspelled = words.filter(afterc);</span><br><span class="line"><span class="built_in">console</span>.log(misspelled);</span><br><span class="line"><span class="comment">// [ 'recieve', 'percieve', 'concieve' ]</span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/19/forEach/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript forEach()方法学习小记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/18/sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javascript sort()方法学习小记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="data-structure-seven" data-title="数据结构与算法javascript描述学习笔记（7）" data-url="http://www.yuanye097.com/2016/03/18/data-structure-seven/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 荡漾
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/fancybox/jquery.fancybox.css">
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/require.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/jquery.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60686330-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1994efadc3f3d033974da07965940a2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

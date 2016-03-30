@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.yuanye097.com/"/>
-  <updated>2016-03-24T13:26:12.000Z</updated>
+  <updated>2016-03-30T08:39:13.000Z</updated>
   <id>http://www.yuanye097.com/</id>
   
   <author>
@@ -17,14 +17,29 @@
   
   <entry>
     <title>数据结构与算法javascript描述学习笔记（10）</title>
-    <link href="http://www.yuanye097.com/2016/03/24/data-structure/"/>
-    <id>http://www.yuanye097.com/2016/03/24/data-structure/</id>
+    <link href="http://www.yuanye097.com/2016/03/24/data-structure-ten/"/>
+    <id>http://www.yuanye097.com/2016/03/24/data-structure-ten/</id>
     <published>2016-03-24T13:25:57.000Z</published>
-    <updated>2016-03-24T13:26:12.000Z</updated>
+    <updated>2016-03-30T08:39:13.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;h3 id=&quot;3-4-一个基于列表的应用&quot;&gt;&lt;a href=&quot;#3-4-一个基于列表的应用&quot; class=&quot;headerlink&quot; title=&quot;3.4 一个基于列表的应用&quot;&gt;&lt;/a&gt;3.4 一个基于列表的应用&lt;/h3&gt;&lt;p&gt;为了展示如何使用列表,我们将实现一个类似 Redbox 的影碟租赁自助查询系统。&lt;/p&gt;
+&lt;h4 id=&quot;3-4-1-读取文本文件&quot;&gt;&lt;a href=&quot;#3-4-1-读取文本文件&quot; class=&quot;headerlink&quot; title=&quot;3.4.1 读取文本文件&quot;&gt;&lt;/a&gt;3.4.1 读取文本文件&lt;/h4&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;为了得到商店内的影碟清单,我们需要将数据从文件中读进来。首先,使用一个文本编辑 器输入现有影碟清单,假设将该文件保存为 films.txt。该文件的内容如下(这是由 IMDB 用户在 2013 年 10 月 5 日选出的 20 部最佳影片)。&lt;br&gt;(1) The Shawshank Redemption(《肖申克的救赎》) (2) The Godfather(《教父》)&lt;br&gt;(3) The Godfather: Part II(《教父 2》)&lt;br&gt;(4) Pulp Fiction(《低俗小说》)&lt;br&gt;(5) The Good, the Bad and the Ugly(《黄金三镖客》) (6) 12 Angry Men(《十二怒汉》)&lt;br&gt;(7) Schindler’s List(《辛德勒名单》)&lt;br&gt;(8) The Dark Knight(《黑暗骑士》)&lt;br&gt;(9) The Lord of the Rings: The Return of the King(《指环王:王者归来》)&lt;br&gt;(10) Fight Club(《搏击俱乐部》)&lt;br&gt;(11) Star Wars: Episode V - The Empire Strikes Back(《星球大战 5:帝国反击战》) (12) One Flew Over the Cuckoo’s Nest(《飞越疯人院》)&lt;br&gt;(13) The Lord of the Rings: The Fellowship of the Ring(《指环王:护戒使者》) (14) Inception(《盗梦空间》)&lt;br&gt;(15) Goodfellas(《好家伙》)&lt;br&gt;(16) Star Wars(《星球大战》)&lt;br&gt;(17) Seven Samurai(《七武士》)&lt;br&gt;(18) The Matrix(《黑客帝国》)&lt;br&gt;(19) Forrest Gump(《阿甘正传》)&lt;br&gt;(20) City of God(《上帝之城》)&lt;br&gt;现在,我们需要一段程序来读取文件内容:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; movies = read(fimls.txt).split(&lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这一行代码做了两件事。首先它通过调用函数read(fimls.text)读取了文本文件的内容；其次，它将读进来的内容按照换行符分成了不同行，然后保存到数组movies中。&lt;br&gt;这行程序挺管用，但谈不上完美。当读进来的内容被分割成数组后，换行符被替换成空格。多一个空格看起来无伤大雅，但是在比较字符串时却是个灾难。因此，我们需要在循环里，使用trim()方法删除每个数组元素末尾的空格。用一个函数能把这个操作封装起来，从文件中读入数据，然后结果保存到一个数组中：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;creatArr&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;file&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; arr = read(file).split(&lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, len = arr.length; i &amp;lt; len; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		arr[i] = arr[i].trim();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; arr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;3-4-2-使用列表管理影碟租赁&quot;&gt;&lt;a href=&quot;#3-4-2-使用列表管理影碟租赁&quot; class=&quot;headerlink&quot; title=&quot;3.4.2 使用列表管理影碟租赁&quot;&gt;&lt;/a&gt;3.4.2 使用列表管理影碟租赁&lt;/h4&gt;&lt;p&gt;下一步要将数组movies中的元素保存到一个列表中。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; movieList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; List();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, len = movies.length;i &amp;lt; len; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   movieList.append(movies[i])；&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;现在写一个函数显示影碟店里现有的影碟清单：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayList&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;list&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(list.front();list.currPos() &amp;lt; list.length(); list.next())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(list.getElement());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;displayList()函数对于原生的数据类型没什么问题，比如由字符串组成的列表。但是它用不了自定义类型，比如我们将在下面定义的Customer对象。让我们对它稍作修改，让它可以发现列表是由Customer对象组成的，这样可以对应地对其进行显示了，下面重新定义displayList()：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayList&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;list&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(list.front(); list.currPos() &amp;lt; list.length(); list.next())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(list.getElement() &lt;span class=&quot;keyword&quot;&gt;instanceof&lt;/span&gt; Customer)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(list.getElement()[&lt;span class=&quot;string&quot;&gt;&quot;name&quot;&lt;/span&gt;] + &lt;span class=&quot;string&quot;&gt;&quot;，&quot;&lt;/span&gt; + list.getElement()[&lt;span class=&quot;string&quot;&gt;&quot;movie&quot;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;			&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(list.getElement());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;对于列表中的每个元素，都使用instanceof操作符判断该元素是否是Customer对象。如果是，就使用name和movie做索引，得到客户检出的相应条目的值；如果不是，返回该元素即可。&lt;br&gt;现在已经有了列表 movies,还需要创建一个新列表 customers,用来保存在系统中检出电影的客户:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; customers = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; List();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;该列表包含Customer对象,该对象由用户的姓名和用户检出的电影组成。下面是Customer对象的构造函数:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Customer&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name, movie&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name = name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.movie = movie;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;接下来,需要创建一个允许客户检出电影的函数。该函数有两个参数:客户姓名和客户想要检出的电影。如果该电影目前可以租赁,该方法会从影碟店的影碟清单里删除该元素,同时加入客户列表customers。这个操作会用到列表的contains()方法。&lt;br&gt;下面是用于检出电影的函数定义:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkOut&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name,movie,filmList,customerList&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(movieList.contains(movie))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Customer(name,movie);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    customerList.append(c);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    filmList.remove(movie);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(movie + &lt;span class=&quot;string&quot;&gt;&quot; is not available.&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;该方法首先查询想要租赁的电影是否存在,如果可以,就创建一个新的 Customer 对象,该 对象包含影片名称和客户姓名。然后将该对象加入客户列表,并且从影碟列表中删除该影 片。如果影片暂时不存在,则显示一行简短的提示。&lt;br&gt;可以用下列简单代码测试 checkOut() 函数:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; movies = createArr(&lt;span class=&quot;string&quot;&gt;&quot;films.txt&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; movieList = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; List();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; customers = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; List();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; movies.length; ++i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	movieList.append(movies[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;Available movies: \n&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;displayList(movieList);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;checkOut(&lt;span class=&quot;string&quot;&gt;&quot;Jane Doe&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;The Godfather&quot;&lt;/span&gt;, movieList, customers);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&quot;\nCustomer Rentals: \n&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;displayList(customers);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输出显示”The Godfather”从影碟列表中删除了,跟着又被加入了客户列表中。&lt;/p&gt;
+</content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;3-4-一个基于列表的应用&quot;&gt;&lt;a href=&quot;#3-4-一个基于列表的应用&quot; class=&quot;headerlink&quot; title=&quot;3.4 一个基于列表的应用&quot;&gt;&lt;/a&gt;3.4 一个基于列表的应用&lt;/h3&gt;&lt;p&gt;为了展示如何使用列表,我们将实现一个类似 Redbox 的影碟租赁自助查询系统。&lt;/p&gt;
+&lt;h4 id=&quot;3-4-1-读取文本文件&quot;&gt;&lt;a href=&quot;#3-4-1-读取文本文件&quot; class=&quot;headerlink&quot; title=&quot;3.4.1 读取文本文件&quot;&gt;&lt;/a&gt;3.4.1 读取文本文件&lt;/h4&gt;
     
     </summary>
     
@@ -33,10 +48,10 @@
   
   <entry>
     <title>数据结构与算法javascript描述学习笔记（9）</title>
-    <link href="http://www.yuanye097.com/2016/03/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95javascript%E6%8F%8F%E8%BF%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%889%EF%BC%89/"/>
-    <id>http://www.yuanye097.com/2016/03/22/数据结构与算法javascript描述学习笔记（9）/</id>
+    <link href="http://www.yuanye097.com/2016/03/22/data-structure-nine/"/>
+    <id>http://www.yuanye097.com/2016/03/22/data-structure-nine/</id>
     <published>2016-03-22T13:52:00.000Z</published>
-    <updated>2016-03-24T14:39:44.000Z</updated>
+    <updated>2016-03-28T07:28:39.000Z</updated>
     
     <content type="html">&lt;p&gt;今天上午把此书的第二章数组的基础用法学习完了，现在开始学习下第三章的内容–列表。&lt;/p&gt;
 &lt;h3 id=&quot;第三章-列表&quot;&gt;&lt;a href=&quot;#第三章-列表&quot; class=&quot;headerlink&quot; title=&quot;第三章 列表&quot;&gt;&lt;/a&gt;第三章 列表&lt;/h3&gt;&lt;p&gt;在日常生活中，人们经常使用列表：代办事项列表、购物清单、十佳榜单、最后十名榜单等。计算机程序也在使用列表，尤其是列表中保存的元素不是太多时。当不需要在一个很长的序列中查找元素，或者对其进行排列时，列表显得尤为有用。反之，如果数据结构非常复杂，列表的作用就没有那么大了。本章展示了如何创建一个简单的列表类。首先给出列表的抽象数据类型定义，然后描述如何实现该抽象数据类型(ADT)。最后，分析几个列表适合解决的实际问题。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -133,6 +148,15 @@
 &lt;p&gt;clear()方法使用delete操作符删除数组dataStore,接着在下一行创建一个空数组。最后一行将listSize和pos的值设为1，表明这是一个新的列表。&lt;/p&gt;
 &lt;h4 id=&quot;3-2-8-contains-判断给定值是否在列表中&quot;&gt;&lt;a href=&quot;#3-2-8-contains-判断给定值是否在列表中&quot; class=&quot;headerlink&quot; title=&quot;3.2.8 contains:判断给定值是否在列表中&quot;&gt;&lt;/a&gt;3.2.8 contains:判断给定值是否在列表中&lt;/h4&gt;&lt;p&gt;当需要判断一个给定值是否在列表中时，contains()方法就变得很有用。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;contains&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;element&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,len = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dataStore.length;i &amp;lt; len; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dataStore[i] == element)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4 id=&quot;3-2-9-遍历列表&quot;&gt;&lt;a href=&quot;#3-2-9-遍历列表&quot; class=&quot;headerlink&quot; title=&quot;3.2.9 遍历列表&quot;&gt;&lt;/a&gt;3.2.9 遍历列表&lt;/h4&gt;&lt;p&gt;最后的一组方法允许用户在列表上自由移动，最后一个方法getElement()返回列表的当前元素&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;front&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;end&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.listSize - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;prev&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    --&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;next&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos &amp;lt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.listSize - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ++&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;currpos&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;moveTo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;position&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos = position;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getElement&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.dataStore[&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.pos];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//让我们创建一个由姓氏组成的列表，来展示怎么使用这些方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; names = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; List();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Clayton&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Raymond&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Cynthia&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Jennifer&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Bryan&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.append(&lt;span class=&quot;string&quot;&gt;&quot;Danny&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//现在移动到列表中的第一个元素并且显示它:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.front();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(names.getElement()); &lt;span class=&quot;comment&quot;&gt;// 显示 Clayton&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//接下来向前移动一个单位并且显示它:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.next();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(names.getElement()); &lt;span class=&quot;comment&quot;&gt;// 显示 Raymond&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//现在,让我们先向前移动两次,然后向后移动一次,显示出当前元素,看看 prev() 方法的 工作原理:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.next();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.next();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;names.prev();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(names.getElement()); &lt;span class=&quot;comment&quot;&gt;// 显示 Cynthia&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//上述代码段展示的这些行为实际上是迭代器的概念,这也是接下来要讨论的内容。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-3-使用迭代器访问列表&quot;&gt;&lt;a href=&quot;#3-3-使用迭代器访问列表&quot; class=&quot;headerlink&quot; title=&quot;3.3 使用迭代器访问列表&quot;&gt;&lt;/a&gt;3.3 使用迭代器访问列表&lt;/h3&gt;&lt;p&gt;使用迭代器，可以不必关心数据的内存存储方式，以实现对列表的遍历。前面提到的方法front()、end()、prev()、next()、和currPos()就实现了cList类的一个迭代器。以下是和使用数组索引的方式相比，使用迭代器的一些优点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问列表元素时不必关心底层的数据存储结构。&lt;/li&gt;
+&lt;li&gt;当为列表添加一个元素时，索引的值就不对了，此时只用更新列表，而不用更新迭代器。&lt;/li&gt;
+&lt;li&gt;可以用不同类型的数据存储方式来实现cList类，迭代器为访问列表里的元素提供了一种统一的方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;了解这些优点后，来看一个使用迭代器遍历列表的例子:&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(names.front(); names.currPos() &amp;lt; names.length(); names.next()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(names.getElement());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在for循环的一开始，将列表的当前位置设置为第一个元素。只要currPos的值小于列表的长度，就一直循环，每一次循环都调用next()方法将当前位置向前移动一位。&lt;br&gt;同理，还可以从后向前便利列表，代码如下 ：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(names.end();names.currPos() &amp;gt;= &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;names.prev())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(names.getElement());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;循环从列表的最后一个元素开始，当当前位置大于或等于0时，调用prev()方法后移一位&lt;br&gt;迭代器只是用来在列表上随意移动，而不应该和任何为列表增加或删除元素的方法一起使用。&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -151,8 +175,8 @@
   
   <entry>
     <title>数据结构与算法javascript描述学习笔记（8）</title>
-    <link href="http://www.yuanye097.com/2016/03/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95javascript%E6%8F%8F%E8%BF%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%888%EF%BC%89/"/>
-    <id>http://www.yuanye097.com/2016/03/22/数据结构与算法javascript描述学习笔记（8）/</id>
+    <link href="http://www.yuanye097.com/2016/03/22/data-structure-eight/"/>
+    <id>http://www.yuanye097.com/2016/03/22/data-structure-eight/</id>
     <published>2016-03-22T01:55:00.000Z</published>
     <updated>2016-03-22T08:55:31.000Z</updated>
     
@@ -191,8 +215,8 @@
   
   <entry>
     <title>javascript filter()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/21/javascript-filter-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/21/javascript-filter-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/21/filter/"/>
+    <id>http://www.yuanye097.com/2016/03/21/filter/</id>
     <published>2016-03-21T07:02:00.000Z</published>
     <updated>2016-03-21T07:44:32.000Z</updated>
     
@@ -232,8 +256,8 @@
   
   <entry>
     <title>javascript map()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/21/javascript-map-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/21/javascript-map-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/21/map/"/>
+    <id>http://www.yuanye097.com/2016/03/21/map/</id>
     <published>2016-03-21T03:27:00.000Z</published>
     <updated>2016-03-21T06:42:27.000Z</updated>
     
@@ -279,8 +303,8 @@
   
   <entry>
     <title>javascript reduceRight()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/21/javascript-reduceRight-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/21/javascript-reduceRight-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/21/reduceRight/"/>
+    <id>http://www.yuanye097.com/2016/03/21/reduceRight/</id>
     <published>2016-03-21T01:56:00.000Z</published>
     <updated>2016-03-21T03:17:32.000Z</updated>
     
@@ -330,8 +354,8 @@
   
   <entry>
     <title>javascript reduce()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/20/javascript-reduce-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/20/javascript-reduce-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/20/reduce/"/>
+    <id>http://www.yuanye097.com/2016/03/20/reduce/</id>
     <published>2016-03-20T14:50:00.000Z</published>
     <updated>2016-03-20T15:53:36.000Z</updated>
     
@@ -478,8 +502,8 @@
   
   <entry>
     <title>javascript every()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/20/javascript-every-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/20/javascript-every-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/20/every/"/>
+    <id>http://www.yuanye097.com/2016/03/20/every/</id>
     <published>2016-03-20T14:09:00.000Z</published>
     <updated>2016-03-20T14:40:49.000Z</updated>
     
@@ -522,8 +546,8 @@
   
   <entry>
     <title>javascript forEach()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/19/javascript-forEach-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/19/javascript-forEach-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/19/forEach/"/>
+    <id>http://www.yuanye097.com/2016/03/19/forEach/</id>
     <published>2016-03-19T02:52:00.000Z</published>
     <updated>2016-03-20T14:04:16.000Z</updated>
     
@@ -574,8 +598,8 @@
   
   <entry>
     <title>数据结构与算法javascript描述学习笔记（7）</title>
-    <link href="http://www.yuanye097.com/2016/03/18/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95javascript%E6%8F%8F%E8%BF%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%887%EF%BC%89/"/>
-    <id>http://www.yuanye097.com/2016/03/18/数据结构与算法javascript描述学习笔记（7）/</id>
+    <link href="http://www.yuanye097.com/2016/03/18/data-structure-seven/"/>
+    <id>http://www.yuanye097.com/2016/03/18/data-structure-seven/</id>
     <published>2016-03-18T14:35:00.000Z</published>
     <updated>2016-03-19T02:33:33.000Z</updated>
     
@@ -618,8 +642,8 @@
   
   <entry>
     <title>javascript sort()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/18/javascript-sort-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/18/javascript-sort-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/18/sort/"/>
+    <id>http://www.yuanye097.com/2016/03/18/sort/</id>
     <published>2016-03-18T08:51:00.000Z</published>
     <updated>2016-03-18T10:03:42.000Z</updated>
     
@@ -657,8 +681,8 @@
   
   <entry>
     <title>javascript shift()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/18/javascript-shift-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/18/javascript-shift-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/18/shift/"/>
+    <id>http://www.yuanye097.com/2016/03/18/shift/</id>
     <published>2016-03-18T02:24:00.000Z</published>
     <updated>2016-03-18T02:37:37.000Z</updated>
     
@@ -683,8 +707,8 @@
   
   <entry>
     <title>javascript pop()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/18/javascript-pop-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/18/javascript-pop-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/18/pop/"/>
+    <id>http://www.yuanye097.com/2016/03/18/pop/</id>
     <published>2016-03-18T02:16:00.000Z</published>
     <updated>2016-03-18T02:23:38.000Z</updated>
     
@@ -709,8 +733,8 @@
   
   <entry>
     <title>javascript unshift()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/18/javascript-unshift-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/18/javascript-unshift-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/18/unshift/"/>
+    <id>http://www.yuanye097.com/2016/03/18/unshift/</id>
     <published>2016-03-18T01:53:00.000Z</published>
     <updated>2016-03-18T02:23:47.000Z</updated>
     
@@ -737,8 +761,8 @@
   
   <entry>
     <title>javascript push()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/17/javascript-push-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/17/javascript-push-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/17/push/"/>
+    <id>http://www.yuanye097.com/2016/03/17/push/</id>
     <published>2016-03-17T09:17:00.000Z</published>
     <updated>2016-03-17T09:35:41.000Z</updated>
     
@@ -769,8 +793,8 @@
   
   <entry>
     <title>javascript splice()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/17/javascript-splice-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/17/javascript-splice-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/17/splice/"/>
+    <id>http://www.yuanye097.com/2016/03/17/splice/</id>
     <published>2016-03-17T06:08:00.000Z</published>
     <updated>2016-03-17T07:50:56.000Z</updated>
     
@@ -802,8 +826,8 @@
   
   <entry>
     <title>javascript concat()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/17/javascript-concat-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/17/javascript-concat-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/17/concat/"/>
+    <id>http://www.yuanye097.com/2016/03/17/concat/</id>
     <published>2016-03-17T03:14:00.000Z</published>
     <updated>2016-03-17T06:06:58.000Z</updated>
     
@@ -841,8 +865,8 @@
   
   <entry>
     <title>数据结构与算法JavaScript描述学习笔记（6）</title>
-    <link href="http://www.yuanye097.com/2016/03/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95JavaScript%E6%8F%8F%E8%BF%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886%EF%BC%89/"/>
-    <id>http://www.yuanye097.com/2016/03/17/数据结构与算法JavaScript描述学习笔记（6）/</id>
+    <link href="http://www.yuanye097.com/2016/03/17/data-structure-six/"/>
+    <id>http://www.yuanye097.com/2016/03/17/data-structure-six/</id>
     <published>2016-03-17T02:23:00.000Z</published>
     <updated>2016-03-18T03:15:25.000Z</updated>
     
@@ -901,8 +925,8 @@
   
   <entry>
     <title>javascript join()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/17/javascript-join-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/17/javascript-join-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/17/join/"/>
+    <id>http://www.yuanye097.com/2016/03/17/join/</id>
     <published>2016-03-17T01:59:00.000Z</published>
     <updated>2016-03-19T02:41:16.000Z</updated>
     
@@ -930,8 +954,8 @@
   
   <entry>
     <title>javascript indexOf()方法学习小记</title>
-    <link href="http://www.yuanye097.com/2016/03/16/javascript-indexOf-%E6%96%B9%E6%B3%95%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.yuanye097.com/2016/03/16/javascript-indexOf-方法学习小记/</id>
+    <link href="http://www.yuanye097.com/2016/03/16/indexOf/"/>
+    <id>http://www.yuanye097.com/2016/03/16/indexOf/</id>
     <published>2016-03-16T06:04:00.000Z</published>
     <updated>2016-03-19T02:41:23.000Z</updated>
     

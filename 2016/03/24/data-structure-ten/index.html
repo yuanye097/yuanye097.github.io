@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>数据结构与算法javascript描述学习笔记（10） | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="Web,HTML,CSS,JavaScript,hexo,前端">
+  <meta name="description" content="3.4 一个基于列表的应用为了展示如何使用列表,我们将实现一个类似 Redbox 的影碟租赁自助查询系统。">
+  <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
+  <link rel="icon" href="/assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/css/style.css">
+  <script>var qiniu='http://7xnv26.com1.z0.glb.clouddn.com/';</script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">荡漾</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为码神一样的技术达人</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.52cik.com/">码神</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">热爱web前端，努力成为像码神一样的技术达人！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">荡漾</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">荡漾</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">成为码神一样的技术达人</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-data-structure-ten" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/24/data-structure-ten/" class="article-date">
+  	<time datetime="2016-03-24T13:25:57.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法javascript描述学习笔记（10）
+    </h1>
+  
+
+      </header>
+
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <h3 id="3-4-一个基于列表的应用"><a href="#3-4-一个基于列表的应用" class="headerlink" title="3.4 一个基于列表的应用"></a>3.4 一个基于列表的应用</h3><p>为了展示如何使用列表,我们将实现一个类似 Redbox 的影碟租赁自助查询系统。</p>
+<h4 id="3-4-1-读取文本文件"><a href="#3-4-1-读取文本文件" class="headerlink" title="3.4.1 读取文本文件"></a>3.4.1 读取文本文件</h4><a id="more"></a>
+<p>为了得到商店内的影碟清单,我们需要将数据从文件中读进来。首先,使用一个文本编辑 器输入现有影碟清单,假设将该文件保存为 films.txt。该文件的内容如下(这是由 IMDB 用户在 2013 年 10 月 5 日选出的 20 部最佳影片)。<br>(1) The Shawshank Redemption(《肖申克的救赎》) (2) The Godfather(《教父》)<br>(3) The Godfather: Part II(《教父 2》)<br>(4) Pulp Fiction(《低俗小说》)<br>(5) The Good, the Bad and the Ugly(《黄金三镖客》) (6) 12 Angry Men(《十二怒汉》)<br>(7) Schindler’s List(《辛德勒名单》)<br>(8) The Dark Knight(《黑暗骑士》)<br>(9) The Lord of the Rings: The Return of the King(《指环王:王者归来》)<br>(10) Fight Club(《搏击俱乐部》)<br>(11) Star Wars: Episode V - The Empire Strikes Back(《星球大战 5:帝国反击战》) (12) One Flew Over the Cuckoo’s Nest(《飞越疯人院》)<br>(13) The Lord of the Rings: The Fellowship of the Ring(《指环王:护戒使者》) (14) Inception(《盗梦空间》)<br>(15) Goodfellas(《好家伙》)<br>(16) Star Wars(《星球大战》)<br>(17) Seven Samurai(《七武士》)<br>(18) The Matrix(《黑客帝国》)<br>(19) Forrest Gump(《阿甘正传》)<br>(20) City of God(《上帝之城》)<br>现在,我们需要一段程序来读取文件内容:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movies = read(fimls.txt).split(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这一行代码做了两件事。首先它通过调用函数read(fimls.text)读取了文本文件的内容；其次，它将读进来的内容按照换行符分成了不同行，然后保存到数组movies中。<br>这行程序挺管用，但谈不上完美。当读进来的内容被分割成数组后，换行符被替换成空格。多一个空格看起来无伤大雅，但是在比较字符串时却是个灾难。因此，我们需要在循环里，使用trim()方法删除每个数组元素末尾的空格。用一个函数能把这个操作封装起来，从文件中读入数据，然后结果保存到一个数组中：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatArr</span>(<span class="params">file</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> arr = read(file).split(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">		arr[i] = arr[i].trim();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-4-2-使用列表管理影碟租赁"><a href="#3-4-2-使用列表管理影碟租赁" class="headerlink" title="3.4.2 使用列表管理影碟租赁"></a>3.4.2 使用列表管理影碟租赁</h4><p>下一步要将数组movies中的元素保存到一个列表中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movieList = <span class="keyword">new</span> List();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = movies.length;i &lt; len; i++)&#123;</span><br><span class="line">   movieList.append(movies[i])；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在写一个函数显示影碟店里现有的影碟清单：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">displayList</span>(<span class="params">list</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">for</span>(list.front();list.currPos() &lt; list.length(); list.next())&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(list.getElement());</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>displayList()函数对于原生的数据类型没什么问题，比如由字符串组成的列表。但是它用不了自定义类型，比如我们将在下面定义的Customer对象。让我们对它稍作修改，让它可以发现列表是由Customer对象组成的，这样可以对应地对其进行显示了，下面重新定义displayList()：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">displayList</span>(<span class="params">list</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(list.front(); list.currPos() &lt; list.length(); list.next())&#123;</span><br><span class="line">		<span class="keyword">if</span>(list.getElement() <span class="keyword">instanceof</span> Customer)&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(list.getElement()[<span class="string">"name"</span>] + <span class="string">"，"</span> + list.getElement()[<span class="string">"movie"</span>]);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(list.getElement());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于列表中的每个元素，都使用instanceof操作符判断该元素是否是Customer对象。如果是，就使用name和movie做索引，得到客户检出的相应条目的值；如果不是，返回该元素即可。<br>现在已经有了列表 movies,还需要创建一个新列表 customers,用来保存在系统中检出电影的客户:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> customers = <span class="keyword">new</span> List();</span><br></pre></td></tr></table></figure></p>
+<p>该列表包含Customer对象,该对象由用户的姓名和用户检出的电影组成。下面是Customer对象的构造函数:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Customer</span>(<span class="params">name, movie</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.movie = movie;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来,需要创建一个允许客户检出电影的函数。该函数有两个参数:客户姓名和客户想要检出的电影。如果该电影目前可以租赁,该方法会从影碟店的影碟清单里删除该元素,同时加入客户列表customers。这个操作会用到列表的contains()方法。<br>下面是用于检出电影的函数定义:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkOut</span>(<span class="params">name,movie,filmList,customerList</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(movieList.contains(movie))&#123;</span><br><span class="line">    <span class="keyword">var</span> c = <span class="keyword">new</span> Customer(name,movie);</span><br><span class="line">    customerList.append(c);</span><br><span class="line">    filmList.remove(movie);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(movie + <span class="string">" is not available."</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该方法首先查询想要租赁的电影是否存在,如果可以,就创建一个新的 Customer 对象,该 对象包含影片名称和客户姓名。然后将该对象加入客户列表,并且从影碟列表中删除该影 片。如果影片暂时不存在,则显示一行简短的提示。<br>可以用下列简单代码测试 checkOut() 函数:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movies = createArr(<span class="string">"films.txt"</span>);</span><br><span class="line"><span class="keyword">var</span> movieList = <span class="keyword">new</span> List();</span><br><span class="line"><span class="keyword">var</span> customers = <span class="keyword">new</span> List();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; movies.length; ++i) &#123;</span><br><span class="line">	movieList.append(movies[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Available movies: \n"</span>);</span><br><span class="line">displayList(movieList);</span><br><span class="line">checkOut(<span class="string">"Jane Doe"</span>, <span class="string">"The Godfather"</span>, movieList, customers);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"\nCustomer Rentals: \n"</span>);</span><br><span class="line">displayList(customers);</span><br></pre></td></tr></table></figure></p>
+<p>输出显示”The Godfather”从影碟列表中删除了,跟着又被加入了客户列表中。</p>
+
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/22/data-structure-nine/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法javascript描述学习笔记（9）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="data-structure-ten" data-title="数据结构与算法javascript描述学习笔记（10）" data-url="http://www.yuanye097.com/2016/03/24/data-structure-ten/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 荡漾
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/fancybox/jquery.fancybox.css">
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/require.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/jquery.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60686330-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1994efadc3f3d033974da07965940a2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

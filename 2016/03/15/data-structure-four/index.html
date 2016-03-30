@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>数据结构与算法JavaScript描述学习笔记（4） | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="今天开始学习此书的第二章数组，数组是计算机编程世界里最常见的数据结构。任何一种编程语言都包含数组，只是形式上略有不同。数组是编程语言中的内建类型，通常效率很高，可以满足不同需求的数据存储。  第四天">
+  <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
+  <link rel="icon" href="/assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/css/style.css">
+  <script>var qiniu='http://7xnv26.com1.z0.glb.clouddn.com/';</script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">荡漾</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为码神一样的技术达人</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.52cik.com/">码神</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">热爱web前端，努力成为像码神一样的技术达人！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">荡漾</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">荡漾</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">成为码神一样的技术达人</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-data-structure-four" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/03/15/data-structure-four/" class="article-date">
+  	<time datetime="2016-03-15T01:57:00.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法JavaScript描述学习笔记（4）
+    </h1>
+  
+
+      </header>
+
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <p>今天开始学习此书的第二章数组，数组是计算机编程世界里最常见的数据结构。任何一种编程语言都包含数组，只是形式上略有不同。数组是编程语言中的内建类型，通常效率很高，可以满足不同需求的数据存储。</p>
+<ul>
+<li>第四天<a id="more"></a>
+<h3 id="2-1-JavaScript中对数组的定义"><a href="#2-1-JavaScript中对数组的定义" class="headerlink" title="2.1 JavaScript中对数组的定义"></a>2.1 JavaScript中对数组的定义</h3></li>
+</ul>
+<p>数组的标准定义是：一个存储元素的线性集合，元素可以通过索引来任意存取，索引通常是数字，用来计算元素之间存储位置的偏移量。几乎所有的编程语言都有类似的数据结构。然而JavaScript的数组却略有不同。</p>
+<p>JavaScript中的数组是一种特殊的对象，用来表示偏移量的索引是该对象的属性，索引可能是整数。然而，这些数字索引在内部被转换为字符串类型，这是因为JavaScript对象中的属性名必须是字符串。数组在JavaScript中只是一种特殊对象，所以效率上不如其他语言中的数组高。</p>
+<p>JavaScript中的数组，严格来说应该称作对象，是特殊的JavaScript对象，在内部被归类为数组。由于Array在JavaScript中被当做对象，因此它有许多属性和方法可以编程时使用。</p>
+<h3 id="2-2-使用数组"><a href="#2-2-使用数组" class="headerlink" title="2.2 使用数组"></a>2.2 使用数组</h3><p>JavaScript中的数组非常灵活。但是创建数组和存取元素的方法就有好几种，也可以通过不同方式对数组进行查找和排序。JavaScript 1.5还提供了一些函数，让程序员在处理数组时可以使用函数式编程技巧。</p>
+<p>例 2.2.1 创建数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最简单的方式是通过[]操作符声明一个数组变量:</span></span><br><span class="line"><span class="keyword">var</span> numbers = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用这种方式创建数组，将得到一个长度为0的空数组，可以通过调用内建的length属性来验证这一点。</span></span><br><span class="line"><span class="built_in">console</span>.log(numbers.length); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//另一种方式是在声明数组变量时，直接在[]操作符内放入一组元素：</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(numbers.length); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以调用Array的构造函数创建数组：</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="built_in">console</span>.log(numbers.length); <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以为构造函数传入一组元素作为数组的初始值：</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(numbers.length); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在调用Array的构造函数时，可以只传入一个参数，用来指定数组的长度。</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>);</span><br><span class="line"><span class="built_in">console</span>.log(numbers.length); <span class="comment">// 7;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在脚本语言里很常见的一个特性是，数组中的元素不必是同一种数据类型，这一点和很多编程语言不同：</span></span><br><span class="line"><span class="keyword">var</span> objects = [<span class="number">1</span>,<span class="string">"bob"</span>,<span class="literal">null</span>,<span class="literal">false</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//Array.isArray()来判断一个对象是否是数组</span></span><br><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(number)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(arr)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>大多数JavaScript专家推荐使用[]操作符，和使用Array的构造函数比，[]方式被认为效率更高。</p>
+<h3 id="2-2-读写数组"><a href="#2-2-读写数组" class="headerlink" title="2.2 读写数组"></a>2.2 读写数组</h3><p>在一条赋值语句中，可以使用[]操作符将数据赋值给数组，比如将1-100的数组赋给一个数组：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> nums = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">100</span>;i++)&#123;</span><br><span class="line">nums[i] = i+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//还可以使用[]操作符读取数组中的元素</span></span><br><span class="line"><span class="keyword">var</span> number = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> sum = number[<span class="number">0</span>] + number[<span class="number">1</span>] + number[<span class="number">2</span>] + number[<span class="number">3</span>]+ number[<span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(sum); <span class="comment">// 15</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//依次读取数组的所有元素,使用for会更简单</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> i = sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(;i&lt;numbers.length; i++)&#123;</span><br><span class="line">  sum += numbers[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br><span class="line"><span class="comment">//这里使用数组的length属性来控制循环次数，而不是直接使用数字。</span></span><br><span class="line"><span class="comment">//JavaScript中的数组也是对象，数组的长度可以任意增长，超出其创建时指定的长度。</span></span><br><span class="line"><span class="comment">//length属性反映的是当前数组中元素的个数，使用它，可以确保循环遍历了数组中的所有元素。</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-3-由字符串生成数组"><a href="#2-3-由字符串生成数组" class="headerlink" title="2.3 由字符串生成数组"></a>2.3 由字符串生成数组</h3><p>调用字符串对象的split()方法也可以生成数组。刚方法通过一些常见的分隔符，比如分割单词的空格，将一个字符串分成几个部分，并将每部分作为一个元素保存于一个新建的数组中。</p>
+<p>例 2.3.1 split()方法工作原理：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"the quick brown fox jumped over the lazy dog"</span>;</span><br><span class="line"><span class="keyword">var</span> arr = str.split(<span class="string">" "</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"arr的第"</span>+ i +<span class="string">"个是"</span>+arr[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">arr的第0个是the</span><br><span class="line">arr的第1个是quick</span><br><span class="line">arr的第2个是brown</span><br><span class="line">arr的第3个是fox</span><br><span class="line">arr的第4个是jumped</span><br><span class="line">arr的第5个是over</span><br><span class="line">arr的第6个是the</span><br><span class="line">arr的第7个是lazy</span><br><span class="line">arr的第8个是dog</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/03/15/split/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          javascript split()方法学习小记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/14/data-structure-three/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法JavaScript描述学习笔记（3）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="data-structure-four" data-title="数据结构与算法JavaScript描述学习笔记（4）" data-url="http://www.yuanye097.com/2016/03/15/data-structure-four/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 荡漾
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/fancybox/jquery.fancybox.css">
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/require.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/jquery.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60686330-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1994efadc3f3d033974da07965940a2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
