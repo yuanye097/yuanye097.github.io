@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>JavaScript高级程序设计学习笔记(1) | hexo荡漾的web博客|傻屌一枚</title>
+  <meta name="keywords" content="javascript">
+  <meta name="description" content="第一章 javascript简介JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器语言（如Perl）负责的一些输入验证操作。在JavaScript问世之前，">
+  <link rel="alternative" href="/atom.xml" title="hexo荡漾的web博客|傻屌一枚" type="application/atom+xml">
+  <link rel="icon" href="/assets-cdn.github.com/favicon.ico">
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/css/style.css">
+  <script>var qiniu='http://7xnv26.com1.z0.glb.clouddn.com/';</script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">荡漾</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">成为码神一样的技术达人</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+					        
+								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+					        
+								<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/sass/" style="font-size: 10px;">sass</a> <a href="/tags/sublime-Text/" style="font-size: 10px;">sublime Text</a> <a href="/tags/七牛云/" style="font-size: 10px;">七牛云</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.52cik.com/">码神</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">热爱web前端，努力成为像码神一样的技术达人！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">荡漾</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/img/lufy.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">荡漾</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">成为码神一样的技术达人</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/yuanye097" title="github">github</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="mail" target="_blank" href="mailto:231306299@qq.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Advanced-Programming-one" class="article article-type-post" itemscope itemprop="blogPost">
+<div class="article-meta">
+<a href="/2016/05/16/Advanced-Programming-one/" class="article-date">
+  	<time datetime="2016-05-16T08:31:00.000Z" itemprop="datePublished">2016-05-16</time>
+</a>
+</div>
+
+  <div class="article-inner">
+      <input type="hidden" class="isFancy" />
+          <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript高级程序设计学习笔记(1)
+    </h1>
+  
+
+      </header>
+
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/学习日妓/">学习日妓</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+    <div class="article-entry" itemprop="articleBody">
+        <h2 id="第一章-javascript简介"><a href="#第一章-javascript简介" class="headerlink" title="第一章 javascript简介"></a>第一章 javascript简介</h2><p>JavaScript诞生于1995年。当时，它的主要目的是处理以前由服务器语言（如Perl）负责的一些输入验证操作。在JavaScript问世之前，必须把表单数据发送到服务器端才能确定用户是否没有填写某个必填域，是否输入了无效的值。Netscape Navigator希望通过JavaScript来解决这个问题。<br><a id="more"></a><br>在人们普遍使用电话拨号上网的年代，能够在客户端完成一些基本的验证任务绝对是令人兴奋过的。毕竟拨号上网的速度之慢，导致了与服务器的每一次数据交换事实上都成了对人们耐心的一次考验。<br>自此以后，JavaScript逐渐成为市面上常用浏览器必备的一项特色功能。如今，JavaScript的用途早已不再局限于简单的数据验证，而是具备了与浏览器窗口及其内容等几乎所有方面交互的能力。今天的JavaScript已经成为一门功能全面的编程语言，能够处理复杂的计算和交互，拥有了闭包、匿名（lamda，拉姆达）函数，甚至元编程等特性。作为web的一个重要组成部分，JavaScript的重要性是不言而喻的，就连手机浏览器，甚至那些专为残障人士设计的浏览器等非常规浏览器都支持它。当然，微软的例子更为典型。虽然有自己的客户端脚本语言VBScript，但微软仍然在IE的早期版本中加入了自己的JavaScript实现。<br>JavaScript从一个简单的输入验证器发展成为一门强大的编程语言，完全出乎人们的意料。应该说，它既是一门非常简单的语言，又是一门非常复杂的语言。说它简单，是因为学会使用它只需片刻功夫；而说它复杂，是因为要真正掌握它则需要数年时间。要想全面理解和掌握JavaScript,关键在于弄清楚它的本质、历史和局限性。</p>
+<h3 id="1-1-JavaScript-简史"><a href="#1-1-JavaScript-简史" class="headerlink" title="1.1 JavaScript 简史"></a>1.1 JavaScript 简史</h3><p>在web日益流行的同时，人们对客户端脚本语言的需求也越来越强烈。那个时候，绝大多数因特网用户都使用速度仅为28.8kbit/s的“猫”（调制解调器）上网，但网页的大小和复杂性却不断增加。为完成简单的表单验证而频繁地与服务器交换数据只会加重用户的负担。想象一下：用户填写完一个表单，单击“提交”按钮，然后等待30秒钟，最终服务器返回消息说有一个必填字段没有填好，当时走在技术革新最前沿的Netscape公司，决定着手开发一种客户端语言，用来处理这种简单的验证。<br>当时就职于Netscape公司的布兰登·艾奇（Brendan Eich），开始着手为计划于1995年2月发布的Netscape Navigator 2 开发一种名为LiveScript的脚本语言——该语言将同时在浏览器和服务器中使用（它在服务器上的名字叫LiveWire）。为了赶在发布日期前完成LiveScript的开发，Netscape与Sun公司建立了一个开发联盟。在Netscape Navigator 2 正式发布前夕，Netscape为了搭上媒体热炒Java的顺风车，临时把LiveScript 改名为JavaScript。<br>由于JavaScript 1.0 获得了巨大成功，Netscape随即 在Netscape Navigator 3 中又发布了JavaScript 1.1。web虽然羽翼未丰，但用户关注度却屡创新高。在这样的背景下，Netscape把自己定位为市场领袖型公司。与此同时，微软决定向与Navigator竞争的自家产品IE浏览器投入更多资源。Netscape Navigator 3 发布后不久，微软就在其IE3中加入了名为JScript的JavaScript实现（命名为JScript是为了避开与Netscape有关的授权问题）。以现在眼光看来，微软1996年8月为进入web浏览器领域而实施的这个重大举措，是导致Netscape日后蒙羞的一个标志性事件。然而，这个重大举措同时也标志着JavaScript作为一门语言，其开发向前迈进了一大步。<br>微软推出其JavaScript实现意味着有了两个不同的JavaScript版本：Netscape Navigator中的JavaScript、IE中的JScript。与C及其他编程语言不同，当时还没有标准规定JavaScript的语法和特性，两个不同版本并存的局面已经完全暴露了这个问题。随着业界担心的日益加剧，JavaScript的标准化问题被提上了议事日程。<br>1997年，以JavaScript 1.1 为蓝本的建议被提交给了欧洲计算机制造商协会（ECMA，European ComPuter Manufacturers Association）。该协会指定39号技术委员会（TC39,Technical Committee #39）负责“标准化一种通用、跨平台、供应商中立的脚本语言的语法和语义”( <a href="http://www.ecmainternational.org/memento/TC39.htm" target="_blank" rel="external">http://www.ecmainternational.org/memento/TC39.htm</a> )。TC39由来自Netscape、Sun、微软、Borland及其他关注脚本语言发展的公司的程序员组成，他们经过数月的努力完成了ECMA-262——定义一种名为ECMAscript的新脚本语言的标准。<br>第二年，IOS/IEC(International Organization for Standardization and International Electrotechnical Commission,国标标准化组织和国际电工委员会)也采用了ECMAScript作为标准（即 ISO/IEC-16262）。自此以后，浏览器开发商就开始致力于将ECMAScript作为各自JavaScript实现的基础，也在不同程度上取得了成功。</p>
+<h3 id="1-2-JavaScript实现"><a href="#1-2-JavaScript实现" class="headerlink" title="1.2 JavaScript实现"></a>1.2 JavaScript实现</h3><p>虽然JavaScript和ECMAScript通常都被人们用来表达相同的含义，但JavaScript得含义却比ECMA-262中规定的要多得多。没错，一个完整的JavaScript实现应该由下列三个不同的部分组成（见图 1-1）。<br><img src="http://7xnv26.com1.z0.glb.clouddn.com/image/jpg/%E5%9B%BE1-1.png" alt="图1-1"><br>核心(ECMAScript)、文档对象模型(DOM)、浏览器对象模型(DOM)</p>
+<h4 id="1-2-1-ECMAScript"><a href="#1-2-1-ECMAScript" class="headerlink" title="1.2.1 ECMAScript"></a>1.2.1 ECMAScript</h4><p>由ECMA-262定义的ECMAScript与Web浏览器没有依赖关系。实际上，这门语言本身并不包含输入和输出定义。ECMA-262定义的只是这门语言的基础，而在此基础之上可以构建更完善的脚本语言。我们常见的Web浏览器只是ECMAScript实现可能的宿主环境之一。宿主环境不仅提供基本的核心类型和语法提供更多更具体的功能，以便实现针对环境的操作。其他宿主环境包括Node(一种服务端JavaScript平台)和Adobe Flash。<br>既然ECMA-262标准没有参照web浏览器，那它都规定了些什么内容呢？大致说来，它规定了这门语言的下列组成部分：</p>
+<ul>
+<li>语法</li>
+<li>类型</li>
+<li>语句</li>
+<li>关键字</li>
+<li>保留字</li>
+<li>操作符</li>
+<li>对象<br>ECMAScript就是对实现该标准规定的各个方面内容的语言的描述。JavaScript实现了ECMAScript，Adobe ActionScript同样也实现了ECMAScript。</li>
+</ul>
+<h4 id="1-ECMACScript版本"><a href="#1-ECMACScript版本" class="headerlink" title="1.ECMACScript版本"></a>1.ECMACScript版本</h4><p>ECMAScript的不同版本又称为版次，以第X版表示(意即描述特定实现的ECMA-262规范的第X个版本)。ECMA-262的最近一版是第6版，发布于2015年。而ECMA-262的第一版本质上与Netscape的JavaScript 1.1 相同——只不过删除了所有针对浏览器的代码并作了一些较小的改动：ECMA-262要求支持Unicode标准（从而支持多语言开发）,而且对象也变成了平台无关的(Netscape JavaScript 1.1 的对象在不同平台中的实现不一样，例如Data对象)。这也是JavaScript 1.1 和 1.2 与ECMA-262 第一版不一致的主要原因。<br>ECMA-262第二版主要是编辑加工的结果。这一版中内容的更新是为了与ISO/IEC-16262保持严格一致，没有作任何新增、修改或删节处理。因此，一般不使用第二版来衡量ECMAScript实现的兼容性。<br>ECMA-262第三版才是对该标准第一次真正的修改。修改的内容涉及到字符串处理、错误定义和数值输出。这一版还新增了对正则表达式、新控制语句、try-catch异常处理的支持，并围绕标准的国际化做出了一些小的修改。从各方面综合来看，第三版标志着ECMAScript成为了一门真正的标称语言。<br>ECMA-262第四版对这门语言进行了一次全面的检核修订。由于JavaScript在web上意义流行，开发人员纷纷建议修订ECMAScript，以使其能够满足不断增长的web开发需求。作为回应，ECMA TC-39 重新召集相关人员共同谋划这门语言的未来。结果，出台后的标准几乎在第三版技术上完全定义了一门新语言。第四版不仅包含了强类型变量、新语句和新数据结构、真正的类和经典继承，还定义了数据交互的新方式。<br>与此同时，TC39下属的一个小组也提出了一个名为ECMAScript 3.1的替代性建议，该建议只对这门语言进行了较少的改进。这个小组认为第四版给这门语言带来的跨越太大了。因此，该小组建议对这门语言进行小幅修订，能够在现有JavaScript引擎基础上实现。最终，ES3.1附属委员会获得的支持超过了TC39，ECMA-262第四版在正式发布前被放弃。<br>ECMAScript 3.1 成为ECMA-262第五版，并与2009年12月3日正式发布。第五版力求澄清第三版中已知的歧义并增添了新的功能。新功能包括原生JSON对象(用于解析和序列化JSON数据)、继承的方法和高级属性定义，另外还包含一种严格模式，对ECMAScript引擎解释和执行代码进行了补充说明。</p>
+<h4 id="2-什么是ECMAScript兼容性"><a href="#2-什么是ECMAScript兼容性" class="headerlink" title="2.什么是ECMAScript兼容性"></a>2.什么是ECMAScript兼容性</h4><p>ECMA-262 给出了ECMAScript兼容的定义。要想成为ECMAScript的实现，则该实现必须做到：</p>
+<ul>
+<li>支持ECMA-262描述的所有“类型、值、对象、属性、函数以及程序句法和语义”（ECMA-262 第一页）；</li>
+<li>支持Unicode字符标准。此外，兼容的实现还可以进行下列扩展。</li>
+<li>添加ECMA-262没有描述的“更多类型、值、对象、属性和函数”。ECMA-262所说的这些新增特性，主要是指该标准中没有规定的新对象和对象的新属性。</li>
+<li>支持ECMA-262没有定义的“程序和正则表达式语法”。（也就是说，可以修改和扩展内置的正则表达式语法。）</li>
+</ul>
+<p>上述要求为兼容实现的开发人员基于ECMAScript开发一门新语言提供了广阔的空间和极大的灵活性，这也从另一个侧面说明了ECMAScript受开发人员欢迎的原因。</p>
+<h4 id="3-Web浏览器对ECMAScript的支持"><a href="#3-Web浏览器对ECMAScript的支持" class="headerlink" title="3.Web浏览器对ECMAScript的支持"></a>3.Web浏览器对ECMAScript的支持</h4><p>1996年，Netscape Navigator 3 捆绑发布了JavaScript 1.1。而相同的JavaScript 1.1 设计规范随后作为对新标准（ECMA-262）的建议被提交给ECMA。伴随着JavaScript的迅速走红，Netscape豪情满怀地着手开发JavaScript 1.2。然而，问题是ECMA当时还没有接受Netscape的建议。<br>Netscape Navigator 3 发布不久后，微软也推出了IE 3。微软在IE的这一版中捆绑了JScript1.0，很多人都认为JScript1.0与JavaScript 1.1 应该是一样的。但是，由于没有文档依据，加之不适当的特性模仿，JScript 1.0 还是很难与JavaScript 1.1 相提并论。<br>1997年，内置JavaScript 1.2 的Netscape Navigator 4发布；而到这一年年底，ECMA-262第一版也被接受并实现了标准化。结果，虽然ECMAScript被认为是基于JavaScript 1.1 制定的，但JavaScript 1.2 与 ECMAScript的第一版并不兼容。<br>JScript的升级版是IE4中内置的JScript 3.0 (随同微软IIS 3.0 发布的JScript 2.0 从来都没有移植到浏览器中)。微软通过媒体大肆宣传JScript 3.0 是世界上第一个ECMA兼容的脚本语言，但当时的ECMA-262 尚未定稿。于是，JScript 3.0 与 JavaScript 1.2 都遭遇了相同的尴尬局面——谁都没有按照最终的ECMAScript标准来实现。<br>Netscape决定更新其JavaScript实现，即在Netscape Navigator 4.06 中发布JavaScript 1.3，从而做到了与ECMA-262 的第一个版本完全兼容。在JavaScript 1.3 中，Netscape增加了对Unicode标准的支持，并在保留JavaScript 1.2 新增特性的同时实现了所有对象的平台中立化。<br>在Netscape以Mozilla项目的名义开放其源代码时，预期JavaScript 1.4将随同Netscape Navigator 5 一道发布。然而，一个激进的决定，彻底重新设计Netscape代码，打乱了原有计划。后来，JavaScript 1.4 只发布了针对Netscape Enterprise Server 的服务器版，而没有内置于WEB浏览器中。<br>到了2008年，五大主流WEB浏览器(IE、Firefox、Safari、Chrome和Opera)全部做到了与ECMA-262兼容。IE8是第一个着手实现ECMA-262第五版的浏览器，并在IE9中提供了完整的支持。Firefox 4 也紧随其后做到兼容。下表列出了ECMAScirpt受主流web浏览器支持的情况。<br><img src="http://7xnv26.com1.z0.glb.clouddn.com/image/jpg/web-list-form.png" alt="web浏览器兼容列表"></p>
+<h4 id="1-2-2-文档对象模型（DOM）"><a href="#1-2-2-文档对象模型（DOM）" class="headerlink" title="1.2.2 文档对象模型（DOM）"></a>1.2.2 文档对象模型（DOM）</h4><p>文档对象模型(DOM，Document Object Model）是针对XML但经过扩展用于HTML的应用程序编程接口(API，Application Programming Interface)。DOM把整个页面映射为一个多层点结构。HTML或XML页面中的每个组成部分都是某种类型的节点，这些节点又包含着不同类型的数据。看下面这个HTML页面：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Sample Page<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">P</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在DOM中，这个页面可以通过图1-2所示的分层节点图表示。<br><img src="http://7xnv26.com1.z0.glb.clouddn.com/image/jpg/tu-2-1.png" alt="图2-1"><br>通过DOM创建的这个页面可以通过图2-1所示分层节点图表示。<br>通过DOM创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM提供的API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。</p>
+<h4 id="1-为什么要使用DOM"><a href="#1-为什么要使用DOM" class="headerlink" title="1. 为什么要使用DOM"></a>1. 为什么要使用DOM</h4><p>在IE4和Netscape Navigator 4 分别支持的不同形式的DHTML(Dynamic HTML)基础上，开发人员首次无需重新加载网页，就可以修改其外观和内容了。然而，DHTML在给web技术发展带来巨大进步的同时，也带来了巨大的问题。由于Netscape和微软在开发DHTML方面各持己见，过去那个只编写一个HTML页面就能够在任何浏览器中运行的时代结束了。<br>对开发人员而言，如果想继续保持Web跨平台的天性，就必须额外多做一些工作。而人们真正担心的是，如果不对Netscape和微软加以控制，Web开发领域就会出现技术上两强割据，浏览器互不兼容的局面。此时，负责制定Web通信标准的W3C(World Wide Web Consortium，万维网联盟)开始着手规划DOM。</p>
+<h4 id="2-DOM级别"><a href="#2-DOM级别" class="headerlink" title="2. DOM级别"></a>2. DOM级别</h4><p>DOM1级(DOM Level 1)于1998年10月成为W3C的推荐标准。DOM1级由两个模块组成：DOM核心(DOM Core) 和 DOM HTML。其中，DOM核心规定的是如何映射基于XML的文档结构，以便简化对文档中任意部分的访问和操作。DOM HTML模块则在DOM核心的基础上加以扩展，添加了针对HTML的对象的方法。<br><code>请注意，DOM并不只是针对JavaScript的，很多别的语言也都实现了DOM。不过，在Web浏览器中，基于ECMAScript实现的DOM的确已经成为了JavaScript这门语言的一个重要组成部分。</code><br>如果说DOM1级的目标主要是映射文档的结构，那么DOM2级的目标就要宽泛多了。DOM2级在原来DOM的基础上又扩充了(DHTML一直都支持的)鼠标和用户界面事件、范围、遍历(迭代DOM文档的方法)等细分模块，而且通过对象接口增加了对CSS(Cascading Style Sheets，层叠样式表)的支持。DOM1级中的DOM核心模块也经过扩展开始支持XML命名空间。<br>DOM2级引入了下列新模块，也给出了众多新类型和新接口的定义。</p>
+<ul>
+<li>DOM视图(DOM Views)：定义了跟踪不同文档（例如，应用CSS之前和之后的文档）试图的接口；</li>
+<li>DOM事件(DOM Events)：定义了事件和事件处理的接口；</li>
+<li>DOM样式(DOM style)：定义了基于CSS为元素应用样式的接口；</li>
+<li>DOM遍历和范围(DOM Traversal and Range)：定义了遍历和操作文档的接口。<br>DOM3级则进一步扩展了DOM，引入了以统一方式加载和保存文档的方法——在DOM加载和保存(DOM Load and Save)模块中定义；新增了验证文档的方法——在DOM验证(DOM Validation)模块中定义。DOM3级也对DOM核心进行了扩展，开始支持XML 1.0 规范，涉及XML Infoset、XPath和XML Base。<br><code>在阅读DOM标准的时候，读者可能会看到DOM0级(DOM Leave 0)的字眼。实际上，DOM0级标准是不存在的；所谓DOM0级只是DOM历史坐标中的一个参照点而已。具体说来，DOM0级指的是IE4.0和Netscape Navigator 4.0最初支持的DHTML。</code><h4 id="3-其他DOM标准"><a href="#3-其他DOM标准" class="headerlink" title="3.其他DOM标准"></a>3.其他DOM标准</h4>除了DOM核心和DOM HTML接口之外，另外几种语言还发布了只针对自己的DOM标准。下面列出的语言都是基于XML的，每种语言的DOM标准都添加了与特定语言相关的新方法和新街口：</li>
+<li>SVG(Scalable Vector Graphic,可伸缩矢量图) 1.0;</li>
+<li>MathML(Mathematical Markup Language,数字标记语言) 1.0；</li>
+<li>SMIL(Synchroniazed Multmedia Integration Language,同步多媒体集成语言)。<br>还有一些语言也开发了自己的DOM实现，例如Mozilla的XUL(XML User Interface Languege，XML用户界面语言)。但是，只有上面列出的几种语言是W3C的推荐标准。<h4 id="4-Web浏览器对DOM的支持"><a href="#4-Web浏览器对DOM的支持" class="headerlink" title="4.Web浏览器对DOM的支持"></a>4.Web浏览器对DOM的支持</h4>在DOM标准出现了一段时间之后，Web浏览器才开始实现它。微软在IE5中首次尝试实现DOM，但直到IE5.5才算是真正支持DOM1级。在随后的IE6和IE7中，微软都没有引入新的DOM功能，而到了IE8才对以前DOM实现中的BUG进行了修复。<br>Netscape直到Netscape 6(Mozilla 0.6.0)才开始支持DOM。在Netscape 7之后，Mozzila把开发重心转向了Firefox浏览器。Firefox 3完全支持DOM1级，几乎完全支持DOM2级，甚至还支持DOM3级的一部分。(Mozilla开发团队的目标是构建与标准100%兼容的浏览器，而他们的努力也得到了回报。)<br>目前，支持DOM已经成为浏览器开发商的首要目标，主流浏览器每次发布新版本都会改进对DOM的支持。下表列出了主流浏览器对DOM标准的支持情况。<br><img src="http://7xnv26.com1.z0.glb.clouddn.com/image/jpg/liulanqi-form.png" alt="浏览器兼容表"><h4 id="1-2-3-浏览器对象模型-BOM"><a href="#1-2-3-浏览器对象模型-BOM" class="headerlink" title="1.2.3 浏览器对象模型(BOM)"></a>1.2.3 浏览器对象模型(BOM)</h4>IE3和Netscape Navigator 3有一个共同的特色，那就是支持可以访问和操作浏览器窗口的浏览器对象模型(BOM，Brawser Object Model)。开发人员使用BOM可以控制浏览器显示的页面以外的部分。而BOM真正与众不同的地方(也是经常会导致问题的地方),还是它作为JavaScript实现的一部分但却没有相关的标准。这个问题在HTML5中得到了解决，HTML5致力于把很多BOM功能写入正式规范。HTML5发布后，很多关于BOM的困惑烟消云散。<br>从根本上讲，BOM只处理浏览器窗口和框架；但人们习惯上也把所有针对浏览器的JavaScript扩展算作BOM的一部分。下面就是一些这样的扩展：</li>
+<li>弹出新浏览器窗口的功能；</li>
+<li>移动、缩放和关闭浏览器窗口的功能；</li>
+<li>提供浏览器详细信息的navigator对象；</li>
+<li>提供浏览器所加载页面的详细信息的location对象；</li>
+<li>提供用户显示器分辨率详细信息的screen对象；</li>
+<li>对cookies的支持；</li>
+<li>像XMLHttpRequest和IE的ActiveXObject这样的自定义对象。<br>由于没有BOM标准可以遵循，因此每个浏览器都有自己的实现。虽然也存在一些实施标准，例如要有window对象和navigator对象等，但每个浏览器都会为这两个对象乃至其他对象定义自己的属性和方法。现在有了HTML5，BOM实现的细节有望朝着兼容性越来越高的方向发展。第八章将深入讨论。</li>
+</ul>
+<h3 id="1-3-JavaScript版本"><a href="#1-3-JavaScript版本" class="headerlink" title="1.3 JavaScript版本"></a>1.3 JavaScript版本</h3><p>作为Netscape“继承人”的Mozilla公司，是目前唯一还在沿用最初的JavaScript版本编号序列的浏览器开发商。在Netscape将源代码提交给开源的Mozilla项目的时候，JavaScript在浏览器中的最后一个版本号是1.3。(如前所述，1.4版只针对服务器的实现。)后来，随着Mozilla基金会继续开发JavaScript，添加新的特性、关键字和语法，JavaScript的版本号继续递增。下表列出了Netscape/Mozilla浏览器中JavaScript版本号的自增过程：<br><img src="http://7xnv26.com1.z0.glb.clouddn.com/image/jpg/version-img.png" alt="版本图"><br>实际上，上表中的编号方案源自Firefox 4 将内置JavaScript 2.0这一共识。因此，2.0版之前每个递增的版本号，表示的是相应实现与JavaScript 2.0开发目标还有多大的距离。虽然原计划是这样，但JavaScript的这种发展速度让这个计划不再可行。目前，JavaScript 2.0 还没有目标实现。<br><code>请注意，只有Netscape/Mozilla浏览器才遵循这种编号模式。例如，IE的JScript就采用了另一种版本命名方案。换句话说，JScript的版本号与上表中JavaScript的版本号之间不存在任何对应关系。而且，大多数浏览器在提及对JavaScript的支持情况时，一般都以ECMAScript兼容性和对DOM的支持情况为准。</code></p>
+<h4 id="1-4-小结"><a href="#1-4-小结" class="headerlink" title="1.4 小结"></a>1.4 小结</h4><p>JavaScript是一种专为网页交互而设计的脚本语言，由下列三个不同的部分组成：</p>
+<ul>
+<li>ECMAScript，由ECMA-262定义，提供核心语言功能；</li>
+<li>文档对象模型(DOM)，提供访问和操作网页内容的方法和接口；</li>
+<li>浏览器对象模型(BOM)，提供与浏览器交互的方法和接口。<br>JavaScript的这三个部分，在当前五个主要浏览器(IE\Firfox\Chrome、Safari和Opera)中都得到了不同程度的支持。其中，所有浏览器对ECMAScript第3版的支持大体上都还不错，而对ECMAScript 5的支持程度越来越高，但对DOM的支持则彼此相差比较多。对已经正式纳入HTML5标准的BOM来说，尽管各浏览器都实现了某些众所周知的共同特性，但其他特性还会因浏览器而异。</li>
+</ul>
+
+    </div>
+  </div>
+  
+<nav id="article-nav">
+  
+    <a href="/2016/05/17/Advanced-Programming-two/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JavaScript高级程序设计学习笔记(2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/16/data-structure-fifteen/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法javascript描述学习笔记（15）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+</article>
+
+
+<div class="duoshuo">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="Advanced-Programming-one" data-title="JavaScript高级程序设计学习笔记(1)" data-url="http://www.yuanye097.com/2016/05/16/Advanced-Programming-one/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script>var duoshuoQuery={short_name:"yuanye097"};</script>
+  <script src="http://static.duoshuo.com/embed.js"></script>
+  <!-- 多说公共JS代码 end -->
+</div>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 荡漾
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/fancybox/jquery.fancybox.css">
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/require.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/jquery.js"></script>
+<script src="http://7xnv26.com1.z0.glb.clouddn.com/yuanye/js/main.js"></script>
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60686330-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?1994efadc3f3d033974da07965940a2f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
